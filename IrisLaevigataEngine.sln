@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IrisLaevigataEngine", "IrisLaevigataEngine\IrisLaevigataEngine.vcxproj", "{3BCFB288-ED28-44D7-B2F9-22CAECE04C8A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{F5377D14-FBC1-404A-854F-5115B737A411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BCFB288-ED28-44D7-B2F9-22CAECE04C8A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3BCFB288-ED28-44D7-B2F9-22CAECE04C8A}.Debug|Win32.Build.0 = Debug|Win32
+		{3BCFB288-ED28-44D7-B2F9-22CAECE04C8A}.Release|Win32.ActiveCfg = Release|Win32
+		{3BCFB288-ED28-44D7-B2F9-22CAECE04C8A}.Release|Win32.Build.0 = Release|Win32
+		{F5377D14-FBC1-404A-854F-5115B737A411}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F5377D14-FBC1-404A-854F-5115B737A411}.Debug|Win32.Build.0 = Debug|Win32
+		{F5377D14-FBC1-404A-854F-5115B737A411}.Release|Win32.ActiveCfg = Release|Win32
+		{F5377D14-FBC1-404A-854F-5115B737A411}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
