@@ -1,4 +1,6 @@
-#include "Sqrt.h"
+#pragma once
+
+#include "Math.h"
 
 class ILVECTOR
 {
@@ -62,4 +64,8 @@ public:
 		return tmp;
 	}
 
+	double Norm()
+	{
+		return ( IL::ILMath::Sqrt( x * x + y * y + z * z ) );
+	}
 };

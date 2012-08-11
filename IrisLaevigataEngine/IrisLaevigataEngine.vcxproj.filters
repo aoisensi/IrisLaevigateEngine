@@ -9,10 +9,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ILVECTOR.h">
+    <ClInclude Include="TypeInclude.h">
       <Filter>Type</Filter>
     </ClInclude>
-    <ClInclude Include="TypeInclude.h">
+    <ClInclude Include="ILVector.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ILMath.h" />
+    <ClInclude Include="ILSegment.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ILLine.h">
       <Filter>Type</Filter>
     </ClInclude>
   </ItemGroup>

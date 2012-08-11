@@ -1,4 +1,4 @@
-﻿2012/08/10 5:33:36 にビルドを開始しました。
+﻿2012/08/11 13:16:48 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "Debug\IrisLaevigataEngine.unsuccessfulbuild" のタッチ タスクを実行しています。
@@ -15,4 +15,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:00.25
+経過時間 00:00:00.37

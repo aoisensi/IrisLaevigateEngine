@@ -72,7 +72,10 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ILVECTOR.h" />
+    <ClInclude Include="ILLine.h" />
+    <ClInclude Include="ILSegment.h" />
+    <ClInclude Include="ILVector.h" />
+    <ClInclude Include="ILMath.h" />
     <ClInclude Include="TypeInclude.h" />
   </ItemGroup>
   <ItemGroup>
