@@ -11,7 +11,7 @@ int main()
 	printf("Sqrt(2) = %.30f\n",IL::ILMath::Sqrt(2));
 	printf("%f\n",test.Norm());
 	printf("Sin(60) = %.30f\n",IL::ILMath::Sin(30));
-	printf("%f,%f,%f,%f,%f\n",line.a,line.b,line.c,line.d,line.e);
+	printf("%f,%f,%f,%f,%f\n",line.pass.x,line.pass.y,line.pass.z,line.dir.xz,line.dir.y);
 	getchar();
 	return 0;
 }

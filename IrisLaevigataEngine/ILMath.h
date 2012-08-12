@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include "ILAngle.h"
 
 #define M_PI 3.14159265358979323846
 #define M_DEGREE 0.017453292519943295769
@@ -11,19 +12,23 @@ namespace IL
 	class ILMath
 	{
 	public:
-		static double Sin(double o)
+		static double Sin(ILANGLE o)
 		{
-			return sin(M_DEGREE * o);
+			return sin(M_DEGREE * o.angle);
 		}
 
-		static double Cos(double o)
+		static double Cos(ILANGLE o)
 		{
-			return cos(M_DEGREE * o);
+			return cos(M_DEGREE * o.angle);
 		}
 
-		static double Atan(double o)
+		static ILANGLE Atan(double o)
 		{
-			return atan(o) * M_1_DEGREE;
+			return ILANGLE(atan(o) * M_1_DEGREE);
+		}
+		static ILANGLE Atan2(double y,double x)
+		{
+			return ILANGLE(atan2(y,x) * M_1_DEGREE);
 		}
 
 		static double Sqrt(double o)

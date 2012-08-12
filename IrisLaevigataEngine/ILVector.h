@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Math.h"
+#include "ILMath.h"
+#include "ILDirection.h"
 
 class ILVECTOR
 {
@@ -55,6 +56,13 @@ public:
 		return ( x * value.x + y * value.y + z * value.z );
 	}
 
+	ILVECTOR Cross(ILVECTOR value)
+	{
+		return ILVECTOR(this->y * value.z - value.y * this->z,
+						this->z * value.x - value.z * this->x,
+						this->x * value.y - value.x * this->y);
+	}
+
 	ILVECTOR Center(ILVECTOR value)
 	{
 		ILVECTOR tmp;
@@ -67,5 +75,13 @@ public:
 	double Norm()
 	{
 		return ( IL::ILMath::Sqrt( x * x + y * y + z * z ) );
+	}
+	
+	ILDIRECTION Direction()
+	{
+		ILDIRECTION result;
+		result.xz = IL::ILMath::Atan2(z,x);
+		result.y = IL::ILMath::Atan2(y,IL::ILMath::Sqrt(x*x + z*z));
+		return result;
 	}
 };

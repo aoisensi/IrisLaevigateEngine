@@ -22,6 +22,19 @@
     <ClInclude Include="ILLine.h">
       <Filter>Type</Filter>
     </ClInclude>
+    <ClInclude Include="ILDirection.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ILAngle.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ILFlat.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ILSurface.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="ILChk.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />

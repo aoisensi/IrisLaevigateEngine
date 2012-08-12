@@ -72,8 +72,13 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ILAngle.h" />
+    <ClInclude Include="ILChk.h" />
+    <ClInclude Include="ILDirection.h" />
+    <ClInclude Include="ILFlat.h" />
     <ClInclude Include="ILLine.h" />
     <ClInclude Include="ILSegment.h" />
+    <ClInclude Include="ILSurface.h" />
     <ClInclude Include="ILVector.h" />
     <ClInclude Include="ILMath.h" />
     <ClInclude Include="TypeInclude.h" />

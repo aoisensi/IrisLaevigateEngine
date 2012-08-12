@@ -1,44 +1,32 @@
-//x - a = (y - b)/c = (z - d)/e
-
 #pragma once
 
 #include "ILVector.h"
 #include "ILSegment.h"
+#include "ILDirection.h"
 
 class ILLINE
 {
 public:
-	double a, b, c, d, e;
+	ILVECTOR pass;
+	ILDIRECTION dir;
 	ILLINE()
 	{
-		a = 0;
-		b = 0;
-		c = 0;
-		d = 0;
-		e = 0;
+		pass = ILVECTOR();
+		dir = ILDIRECTION();
 	}
-	ILLINE(double A, double B, double C, double D, double E)
+	ILLINE(double X, double Y, double Z, double DXZ, double DY)
 	{
-		a = A;
-		b = B;
-		c = C;
-		d = D;
-		e = E;
+		pass = ILVECTOR(X,Y,Z);
+		dir = ILDIRECTION(DXZ,DY);
 	}
-	ILLINE(ILVECTOR Pass,ILVECTOR Dirc)
+	ILLINE(ILVECTOR Pass,ILDIRECTION Dir)
 	{
-		a = Pass.x;
-		b = Pass.y;
-		c = Pass.z;
-		d = Dirc.y / Dirc.x;
-		e = Dirc.z / Dirc.x;
+		pass = Pass;
+		dir = Dir;
 	}
 	ILLINE(ILSEGMENT Segment)
 	{
-		a = Segment.origin.x;
-		b = Segment.origin.y;
-		c = Segment.origin.z;
-		d = Segment.vector.y/Segment.vector.x;
-		e = Segment.vector.z/Segment.vector.x;
+		pass = Segment.origin;
+
 	}
 };
