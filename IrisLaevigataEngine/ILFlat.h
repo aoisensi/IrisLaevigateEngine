@@ -1,8 +1,10 @@
 //a x + b y + c z + d = 0
 
-#pragma once
+#ifndef H_ILFLAT
+#define H_ILFLAT
 
 #include "ILSurface.h"
+
 
 class ILFLAT
 {
@@ -31,3 +33,5 @@ public:
 		d = -(cross.x * Surface.a.x + cross.y * Surface.a.y + cross.z * Surface.a.z);
 	}
 };
+
+#endif

@@ -1,8 +1,11 @@
-#pragma once
+#ifndef H_ILDIRECTION
+#define H_ILDIRECTION
 
+#include "ILVector.h"
 #include "ILAngle.h"
 #include "ILMath.h"
-#include "ILVector.h"
+
+class ILVECTOR;
 
 class ILDIRECTION
 {
@@ -41,3 +44,5 @@ public:
 		return result;
 	}
 };
+
+#endif

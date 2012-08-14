@@ -1,4 +1,5 @@
-#pragma once
+#ifndef H_ILLINE
+#define H_ILLINE
 
 #include "ILVector.h"
 #include "ILSegment.h"
@@ -30,3 +31,5 @@ public:
 
 	}
 };
+
+#endif

@@ -1,7 +1,9 @@
-#pragma once
+#ifndef H_ILSURFACE
+#define H_ILSURFACE
 
 #include "ILVector.h"
 #include "ILFlat.h"
+
 
 class ILSURFACE
 {
@@ -37,3 +39,5 @@ public:
 	}
 
 };
+
+#endif

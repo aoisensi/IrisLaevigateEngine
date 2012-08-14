@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef H_ILANGLE
+#define H_ILANGLE
 
 class ILANGLE
 {
@@ -37,3 +39,5 @@ public:
 		return ILANGLE(angle / value);
 	}
 };
+
+#endif

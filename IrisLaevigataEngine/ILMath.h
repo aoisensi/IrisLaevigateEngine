@@ -1,4 +1,5 @@
-#pragma once
+#ifndef H_ILMATH
+#define H_ILMATH
 
 #include <cmath>
 #include "ILAngle.h"
@@ -49,3 +50,5 @@ namespace IL
 		}
 	};
 }
+
+#endif

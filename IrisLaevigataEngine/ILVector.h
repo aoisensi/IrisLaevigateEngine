@@ -1,4 +1,5 @@
-#pragma once
+#ifndef H_ILVECTOR
+#define H_ILVECTOR
 
 #include "ILMath.h"
 #include "ILDirection.h"
@@ -85,3 +86,5 @@ public:
 		return result;
 	}
 };
+
+#endif

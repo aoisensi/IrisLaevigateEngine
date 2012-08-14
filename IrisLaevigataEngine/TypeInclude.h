@@ -1,5 +1,3 @@
-#pragma once
-
 #include "ILFlat.h"
 #include "ILVector.h"
 #include "ILLine.h"

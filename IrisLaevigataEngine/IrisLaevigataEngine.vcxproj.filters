@@ -4,35 +4,38 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Type">
+    <Filter Include="TypeHedder">
       <UniqueIdentifier>{95364541-fe15-4069-8e71-0e448929b984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TypeCpp">
+      <UniqueIdentifier>{ab03729c-fce4-4f39-b748-9b0b6a0acdc9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TypeInclude.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILVector.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILMath.h" />
     <ClInclude Include="ILSegment.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILLine.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILDirection.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILAngle.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILFlat.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILSurface.h">
-      <Filter>Type</Filter>
+      <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILChk.h" />
   </ItemGroup>

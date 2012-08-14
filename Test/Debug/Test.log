@@ -1,66 +1,50 @@
-﻿2012/08/12 14:46:24 にビルドを開始しました。
+﻿2012/08/14 18:50:25 にビルドを開始しました。
      1>ノード 3 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "Debug\Test.unsuccessfulbuild" のタッチ タスクを実行しています。
        ClCompile:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(27): error C2146: 構文エラー : ';' が、識別子 'Vector' の前に必要です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(27): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(28): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(34): warning C4183: 'Vector': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(35): error C2146: 構文エラー : ';' が、識別子 'Vector' の前に必要です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(35): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(36): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(42): warning C4183: 'Vector': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(29): error C2065: 'ILVECTOR' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(29): error C2146: 構文エラー : ';' が、識別子 'result' の前に必要です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(29): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(30): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(30): error C2228: '.x' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(31): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(31): error C2228: '.y' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(32): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(32): error C2228: '.z' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(33): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(37): error C2065: 'ILVECTOR' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(37): error C2146: 構文エラー : ';' が、識別子 'result' の前に必要です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(37): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(38): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(38): error C2228: '.x' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(39): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(39): error C2228: '.y' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(40): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(40): error C2228: '.z' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(41): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(28): error C2146: 構文エラー : ';' が、識別子 'Flat' の前に必要です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(28): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(29): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(37): warning C4183: 'Flat': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(30): error C2065: 'ILFLAT' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(30): error C2146: 構文エラー : ';' が、識別子 'result' の前に必要です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(30): error C2065: 'result' : 定義されていない識別子です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(31): error C2027: 認識できない型 'ILVECTOR' が使われています。
+                 c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(8) : 'ILVECTOR' の宣言を確認してください。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(32): error C2079: 'result' が 未定義の class 'ILVECTOR' で使用しています。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(33): error C2228: '.x' の左側はクラス、構造体、共用体でなければなりません
+                 型は 'int' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(34): error C2228: '.y' の左側はクラス、構造体、共用体でなければなりません
+                 型は 'int' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(35): error C2228: '.z' の左側はクラス、構造体、共用体でなければなりません
+                 型は 'int' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(39): error C2027: 認識できない型 'ILVECTOR' が使われています。
+                 c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(8) : 'ILVECTOR' の宣言を確認してください。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(40): error C2079: 'result' が 未定義の class 'ILVECTOR' で使用しています。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(41): error C2228: '.x' の左側はクラス、構造体、共用体でなければなりません
+                 型は 'int' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(42): error C2228: '.y' の左側はクラス、構造体、共用体でなければなりません
+                 型は 'int' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ildirection.h(43): error C2228: '.z' の左側はクラス、構造体、共用体でなければなりません
+                 型は 'int' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(30): error C2146: 構文エラー : ';' が、識別子 'Flat' の前に必要です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(30): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(31): error C4430: 型指定子がありません - int と仮定しました。メモ: C++ は int を既定値としてサポートしていません
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(39): warning C4183: 'Flat': 戻り値の型がありません。'int' を返すメンバー関数とみなします。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(32): error C2065: 'ILFLAT' : 定義されていない識別子です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(32): error C2146: 構文エラー : ';' が、識別子 'result' の前に必要です。
      1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(32): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(32): error C2228: '.a' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(33): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(33): error C2228: '.b' の左側はクラス、構造体、共用体でなければなりません
-                 型は ''unknown-type'' です。
      1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(34): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(34): error C2228: '.c' の左側はクラス、構造体、共用体でなければなりません
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(34): error C2228: '.a' の左側はクラス、構造体、共用体でなければなりません
                  型は ''unknown-type'' です。
      1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(35): error C2065: 'result' : 定義されていない識別子です。
-     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(35): error C2228: '.d' の左側はクラス、構造体、共用体でなければなりません
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(35): error C2228: '.b' の左側はクラス、構造体、共用体でなければなりません
                  型は ''unknown-type'' です。
      1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(36): error C2065: 'result' : 定義されていない識別子です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(36): error C2228: '.c' の左側はクラス、構造体、共用体でなければなりません
+                 型は ''unknown-type'' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(37): error C2065: 'result' : 定義されていない識別子です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(37): error C2228: '.d' の左側はクラス、構造体、共用体でなければなりません
+                 型は ''unknown-type'' です。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\irislaevigataengine\ilsurface.h(38): error C2065: 'result' : 定義されていない識別子です。
      1>プロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (build ターゲット) のビルドが終了しました -- 失敗。
 
 ビルドに失敗しました。
 
-経過時間 00:00:00.19
+経過時間 00:00:00.26
