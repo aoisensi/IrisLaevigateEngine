@@ -41,5 +41,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
+    <ClCompile Include="ILAngle.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILVector.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILLine.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILFlat.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILDirection.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILSegment.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILSurface.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

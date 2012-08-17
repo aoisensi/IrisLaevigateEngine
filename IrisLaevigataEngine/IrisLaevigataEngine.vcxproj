@@ -84,6 +84,13 @@
     <ClInclude Include="TypeInclude.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ILAngle.cpp" />
+    <ClCompile Include="ILDirection.cpp" />
+    <ClCompile Include="ILFlat.cpp" />
+    <ClCompile Include="ILLine.cpp" />
+    <ClCompile Include="ILSegment.cpp" />
+    <ClCompile Include="ILSurface.cpp" />
+    <ClCompile Include="ILVector.cpp" />
     <ClCompile Include="IrisLaevigataEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
