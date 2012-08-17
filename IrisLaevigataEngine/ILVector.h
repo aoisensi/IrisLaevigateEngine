@@ -18,6 +18,10 @@ public:
 	ILVECTOR Add(const ILVECTOR &obj)const;
 	ILVECTOR Sub(const ILVECTOR &obj)const;
 	ILVECTOR Mul(const double &obj)const;
+	ILVECTOR operator+(const ILVECTOR& right)const;
+	ILVECTOR operator-(const ILVECTOR& right)const;
+	ILVECTOR operator*(const double& right)const;
+	ILVECTOR operator/(const double& right)const;
 	double Inner(const ILVECTOR &value);
 	ILVECTOR Cross(const ILVECTOR &value);
 	ILVECTOR Center(const ILVECTOR &value);

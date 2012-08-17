@@ -29,6 +29,27 @@ ILVECTOR ILVECTOR::Mul(const double &obj)const
 	return ILVECTOR(x*obj, y*obj, z*obj);
 }
 
+ILVECTOR ILVECTOR::operator+(const ILVECTOR& right)const
+{
+	return ILVECTOR(x+right.x, y+right.y, z+right.z);
+}
+
+ILVECTOR ILVECTOR::operator-(const ILVECTOR& right)const
+{
+	return ILVECTOR(x-right.x, y-right.y, z-right.z);
+}
+
+ILVECTOR ILVECTOR::operator*(const double& right)const
+{
+	return ILVECTOR(x*right, y*right, z*right);
+}
+
+ILVECTOR ILVECTOR::operator/(const double& right)const
+{
+	double value = 1 / right;
+	return ILVECTOR(x*value, y*value, z*value);
+}
+
 double ILVECTOR::Inner(const ILVECTOR &value)
 {
 	return ( x * value.x + y * value.y + z * value.z );

@@ -18,7 +18,7 @@ ILFLAT::ILFLAT(const double &A,const double &B,const double &C,const double &D)
 }
 ILFLAT::ILFLAT(const ILSURFACE &Surface)
 {
-	ILVECTOR cross = (Surface.b.Sub(Surface.a)).Cross(Surface.c.Sub(Surface.a));
+	ILVECTOR cross = (Surface.b-Surface.a).Cross(Surface.c-Surface.a);
 	a = cross.x;
 	b = cross.y;
 	c = cross.z;
