@@ -1,7 +1,7 @@
-﻿2012/08/17 11:53:08 にビルドを開始しました。
+﻿2012/08/19 23:22:57 にビルドを開始しました。
      1>ノード 3 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
-         "AlwaysCreate" が指定されたため "Debug\Test.unsuccessfulbuild" を作成しています。
+         "Debug\Test.unsuccessfulbuild" のタッチ タスクを実行しています。
        ClCompile:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
@@ -19,4 +19,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:00.54
+経過時間 00:00:00.63

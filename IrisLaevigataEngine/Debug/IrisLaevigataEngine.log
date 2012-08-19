@@ -1,10 +1,14 @@
-﻿2012/08/17 11:53:07 にビルドを開始しました。
+﻿2012/08/19 23:22:57 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
-         "AlwaysCreate" が指定されたため "Debug\IrisLaevigataEngine.unsuccessfulbuild" を作成しています。
+         "Debug\IrisLaevigataEngine.unsuccessfulbuild" のタッチ タスクを実行しています。
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILDirection.cpp ILFlat.cpp ILLine.cpp ILSegment.cpp ILSurface.cpp ILVector.cpp IrisLaevigataEngine.h
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILDirection.cpp ILFlat.cpp ILLine.cpp ILMath.cpp ILSegment.cpp ILSurface.cpp ILVector.cpp IrisLaevigataEngine.h
          ILVector.cpp
+         ILMath.cpp
+         コードを生成中...
+         コンパイル中...
+         ILDirection.cpp
          コードを生成中...
          スキップ中... (関連する変更は検出されませんでした)
          IrisLaevigataEngine.h
@@ -12,12 +16,13 @@
          ILSegment.cpp
          ILLine.cpp
          ILFlat.cpp
-         ILDirection.cpp
        Lib:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib" /NOLOGO Debug\ILAngle.obj
          Debug\ILDirection.obj
          Debug\ILFlat.obj
          Debug\ILLine.obj
+         Debug\ILMath.obj
+         Debug\ILPlacement.obj
          Debug\ILSegment.obj
          Debug\ILSurface.obj
          Debug\ILVector.obj
@@ -30,4 +35,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:00.73
+経過時間 00:00:00.50

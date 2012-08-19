@@ -1,5 +1,5 @@
 #include "ILMath.h"
 
-#include "TypeInclude.h"
+#include "ILTypeInclude.h"
 
 #include "ILChk.h"

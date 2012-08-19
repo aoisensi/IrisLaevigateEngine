@@ -77,17 +77,20 @@
     <ClInclude Include="ILDirection.h" />
     <ClInclude Include="ILFlat.h" />
     <ClInclude Include="ILLine.h" />
+    <ClInclude Include="ILPlacement.h" />
     <ClInclude Include="ILSegment.h" />
     <ClInclude Include="ILSurface.h" />
     <ClInclude Include="ILVector.h" />
     <ClInclude Include="ILMath.h" />
-    <ClInclude Include="TypeInclude.h" />
+    <ClInclude Include="ILTypeInclude.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ILAngle.cpp" />
     <ClCompile Include="ILDirection.cpp" />
     <ClCompile Include="ILFlat.cpp" />
     <ClCompile Include="ILLine.cpp" />
+    <ClCompile Include="ILMath.cpp" />
+    <ClCompile Include="ILPlacement.cpp" />
     <ClCompile Include="ILSegment.cpp" />
     <ClCompile Include="ILSurface.cpp" />
     <ClCompile Include="ILVector.cpp" />

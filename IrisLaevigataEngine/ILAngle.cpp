@@ -7,7 +7,7 @@ ILANGLE::ILANGLE()
 }
 ILANGLE::ILANGLE(const double &Angle)
 {
-	angle = Angle / 180.0f;
+	angle = Angle;
 }
 ILANGLE ILANGLE::operator+()
 {

@@ -6,3 +6,5 @@
 #include "ILAngle.h"
 #include "ILDirection.h"
 #include "ILSurface.h"
+
+#include "ILPlacement.h"
