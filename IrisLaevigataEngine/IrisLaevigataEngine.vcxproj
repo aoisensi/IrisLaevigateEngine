@@ -75,10 +75,12 @@
     <ClInclude Include="ILAngle.h" />
     <ClInclude Include="ILChk.h" />
     <ClInclude Include="ILDirection.h" />
+    <ClInclude Include="ILEllipsoid.h" />
     <ClInclude Include="ILFlat.h" />
     <ClInclude Include="ILLine.h" />
     <ClInclude Include="ILPlacement.h" />
     <ClInclude Include="ILSegment.h" />
+    <ClInclude Include="ILSpace.h" />
     <ClInclude Include="ILSurface.h" />
     <ClInclude Include="ILVector.h" />
     <ClInclude Include="ILMath.h" />
@@ -87,11 +89,13 @@
   <ItemGroup>
     <ClCompile Include="ILAngle.cpp" />
     <ClCompile Include="ILDirection.cpp" />
+    <ClCompile Include="ILEllipsoid.cpp" />
     <ClCompile Include="ILFlat.cpp" />
     <ClCompile Include="ILLine.cpp" />
     <ClCompile Include="ILMath.cpp" />
     <ClCompile Include="ILPlacement.cpp" />
     <ClCompile Include="ILSegment.cpp" />
+    <ClCompile Include="ILSpace.cpp" />
     <ClCompile Include="ILSurface.cpp" />
     <ClCompile Include="ILVector.cpp" />
     <ClCompile Include="IrisLaevigataEngine.h" />

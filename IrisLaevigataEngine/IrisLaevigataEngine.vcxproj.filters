@@ -39,6 +39,12 @@
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILTypeInclude.h" />
+    <ClInclude Include="ILSpace.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILEllipsoid.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -67,5 +73,11 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILMath.cpp" />
+    <ClCompile Include="ILSpace.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILEllipsoid.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
