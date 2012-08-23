@@ -9,6 +9,7 @@ class ILELLIPSOID
 	double a,b,c;
 	ILVECTOR vec;
 	ILDIRECTION dir;
+	ILELLIPSOID(void);
 	ILELLIPSOID(const double &a,const double &b,const double &c,const ILVECTOR &Vector,const ILDIRECTION &Direction);
 };
 

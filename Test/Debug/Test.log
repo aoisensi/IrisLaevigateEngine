@@ -1,10 +1,9 @@
-﻿2012/08/19 23:22:57 にビルドを開始しました。
+﻿2012/08/23 12:36:49 にビルドを開始しました。
      1>ノード 3 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
-         "Debug\Test.unsuccessfulbuild" のタッチ タスクを実行しています。
+         "AlwaysCreate" が指定されたため "Debug\Test.unsuccessfulbuild" を作成しています。
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
+         すべての出力が最新のものです。
        Link:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test.lib" /MACHINE:X86 Debug\main.obj
          "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib"
@@ -19,4 +18,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:00.63
+経過時間 00:00:00.31

@@ -3,6 +3,7 @@
 
 #include "ILMath.h"
 #include "ILDirection.h"
+#include "ILMath.h"
 
 class ILDIRECTION;
 
@@ -15,6 +16,7 @@ public:
 
 	ILVECTOR(void);
 	ILVECTOR(const double &X,const double &Y,const double &Z);
+	ILVECTOR(const ILDIRECTION &Direction, const double &Norm);
 	ILVECTOR Add(const ILVECTOR &obj)const;
 	ILVECTOR Sub(const ILVECTOR &obj)const;
 	ILVECTOR Mul(const double &obj)const;

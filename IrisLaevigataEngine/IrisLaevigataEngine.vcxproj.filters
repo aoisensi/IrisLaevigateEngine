@@ -45,6 +45,16 @@
     <ClInclude Include="ILEllipsoid.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
+    <ClInclude Include="ILColor.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILRaytracing.h" />
+    <ClInclude Include="ILBitmap.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILCamera.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -77,6 +87,16 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILEllipsoid.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILColor.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILRaytracing.cpp" />
+    <ClCompile Include="ILBitmap.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILCamera.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
   </ItemGroup>
