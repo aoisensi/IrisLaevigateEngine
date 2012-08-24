@@ -58,6 +58,7 @@
     <ClInclude Include="ILRotation.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
+    <ClInclude Include="ILDist.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -106,5 +107,6 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILChk.cpp" />
+    <ClCompile Include="ILDist.cpp" />
   </ItemGroup>
 </Project>

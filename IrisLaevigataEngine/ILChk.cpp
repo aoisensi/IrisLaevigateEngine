@@ -22,6 +22,18 @@ namespace IL
 		return false;
 	}
 
+	bool ILChk::SegByFlat(const ILSEGMENT &Segment, const ILFLAT &Flat)
+	{
+		if ( SegByFlatB(Segment, Flat) )
+		{
+			double d1 = IL::ILDist::FlatByVector(Flat, Segment.vector);
+			double d2 = IL::ILDist::FlatByVector(Flat, Segment.Unorigin());
+			result = Segment.vector / (d1 + d2) * d1 + Segment.origin;
+			return true;
+		}
+		return false;
+	}
+
 	bool ILChk::SegByFlatB(const ILSEGMENT &Segment, const ILFLAT &Flat)
 	{
 		ILVECTOR FlatPass = Flat.Pass();
@@ -29,5 +41,17 @@ namespace IL
 		ILVECTOR v2 = Segment.Unorigin() - FlatPass;
 		ILVECTOR n = Flat.Pass();
 		return ( v1.Inner(n) * v2.Inner(n) <= 0 );
+	}
+
+	bool ILChk::SegBySur(const ILSEGMENT &Segment, const ILSURFACE &Surface)
+	{
+		if(SegByFlat(Segment,Surface.Flat()))
+		{
+			if ( SurByVecB(Surface, result) )
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 }

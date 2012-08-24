@@ -78,6 +78,7 @@
     <ClInclude Include="ILChk.h" />
     <ClInclude Include="ILColor.h" />
     <ClInclude Include="ILDirection.h" />
+    <ClInclude Include="ILDist.h" />
     <ClInclude Include="ILEllipsoid.h" />
     <ClInclude Include="ILFlat.h" />
     <ClInclude Include="ILLine.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="ILChk.cpp" />
     <ClCompile Include="ILColor.cpp" />
     <ClCompile Include="ILDirection.cpp" />
+    <ClCompile Include="ILDist.cpp" />
     <ClCompile Include="ILEllipsoid.cpp" />
     <ClCompile Include="ILFlat.cpp" />
     <ClCompile Include="ILLine.cpp" />
