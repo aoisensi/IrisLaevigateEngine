@@ -3,7 +3,6 @@
 
 #include "ILMath.h"
 #include "ILDirection.h"
-#include "ILMath.h"
 
 class ILDIRECTION;
 
@@ -20,6 +19,7 @@ public:
 	ILVECTOR Add(const ILVECTOR &obj)const;
 	ILVECTOR Sub(const ILVECTOR &obj)const;
 	ILVECTOR Mul(const double &obj)const;
+	bool Equal(const ILVECTOR &obj, const double &Error)const;
 	ILVECTOR operator+(const ILVECTOR& right)const;
 	ILVECTOR operator-(const ILVECTOR& right)const;
 	ILVECTOR operator*(const double& right)const;
@@ -29,6 +29,7 @@ public:
 	ILVECTOR Center(const ILVECTOR &value);
 	double Norm(void);
 	ILDIRECTION Direction(void);
+	ILVECTOR Normal(void)const;
 };
 
 #endif

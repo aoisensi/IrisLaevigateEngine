@@ -22,6 +22,8 @@ namespace IL
 		static ILANGLE Atan2(const double &y,const double &x);
 
 		static double Sqrt(const double &o);
+
+		static long double Abs(const long double &o);
 	};
 }
 

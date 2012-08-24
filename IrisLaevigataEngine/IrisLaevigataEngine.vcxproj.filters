@@ -55,6 +55,9 @@
     <ClInclude Include="ILCamera.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
+    <ClInclude Include="ILRotation.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -99,5 +102,9 @@
     <ClCompile Include="ILCamera.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
+    <ClCompile Include="ILRotation.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILChk.cpp" />
   </ItemGroup>
 </Project>

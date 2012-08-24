@@ -7,6 +7,7 @@
 #include "ILFlat.h"
 #include "ILLine.h"
 #include "ILPlacement.h"
+#include "ILRotation.h"
 #include "ILSegment.h"
 #include "ILSpace.h"
 #include "ILSurface.h"

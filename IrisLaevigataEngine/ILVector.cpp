@@ -34,6 +34,21 @@ ILVECTOR ILVECTOR::Mul(const double &obj)const
 	return ILVECTOR(x*obj, y*obj, z*obj);
 }
 
+bool ILVECTOR::Equal(const ILVECTOR &obj, const double &Error)const
+{
+	if(IL::ILMath::Abs(this->x - obj.x) < Error)
+	{
+		if(IL::ILMath::Abs(this->y - obj.y) < Error)
+		{
+			if(IL::ILMath::Abs(this->z - obj.z) < Error)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 ILVECTOR ILVECTOR::operator+(const ILVECTOR& right)const
 {
 	return ILVECTOR(x+right.x, y+right.y, z+right.z);
@@ -87,4 +102,9 @@ ILDIRECTION ILVECTOR::Direction()
 	result.xz = IL::ILMath::Atan2(z,x);
 	result.y = IL::ILMath::Atan2(y,IL::ILMath::Sqrt(x*x + z*z));
 	return result;
+}
+
+ILVECTOR ILVECTOR::Normal()const
+{
+	return ILVECTOR(1/y/z,1/x/z,1/x/y);
 }

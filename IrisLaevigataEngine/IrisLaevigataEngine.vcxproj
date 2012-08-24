@@ -83,6 +83,7 @@
     <ClInclude Include="ILLine.h" />
     <ClInclude Include="ILPlacement.h" />
     <ClInclude Include="ILRaytracing.h" />
+    <ClInclude Include="ILRotation.h" />
     <ClInclude Include="ILSegment.h" />
     <ClInclude Include="ILSpace.h" />
     <ClInclude Include="ILSurface.h" />
@@ -94,6 +95,7 @@
     <ClCompile Include="ILAngle.cpp" />
     <ClCompile Include="ILBitmap.cpp" />
     <ClCompile Include="ILCamera.cpp" />
+    <ClCompile Include="ILChk.cpp" />
     <ClCompile Include="ILColor.cpp" />
     <ClCompile Include="ILDirection.cpp" />
     <ClCompile Include="ILEllipsoid.cpp" />
@@ -102,6 +104,7 @@
     <ClCompile Include="ILMath.cpp" />
     <ClCompile Include="ILPlacement.cpp" />
     <ClCompile Include="ILRaytracing.cpp" />
+    <ClCompile Include="ILRotation.cpp" />
     <ClCompile Include="ILSegment.cpp" />
     <ClCompile Include="ILSpace.cpp" />
     <ClCompile Include="ILSurface.cpp" />

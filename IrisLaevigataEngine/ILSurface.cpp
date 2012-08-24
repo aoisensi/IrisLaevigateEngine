@@ -19,7 +19,7 @@ ILSURFACE::ILSURFACE(const double &ax, const double &ay, const double &az, const
 	c = ILVECTOR(cx,cy,cz);
 }
 
-ILFLAT ILSURFACE::Flat()
+ILFLAT ILSURFACE::Flat()const
 {
 	ILFLAT result;
 	ILVECTOR cross = (b.Sub(a)).Cross(c.Sub(a));

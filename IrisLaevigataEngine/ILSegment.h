@@ -15,6 +15,7 @@ public:
 	ILSEGMENT(const ILVECTOR &Origin, const ILVECTOR &Vector);
 	ILSEGMENT(const double & OriginX, const double &OriginY,const double &OriginZ,const double &VectorX, const double &VectorY, const double &VectorZ);
 	ILLINE Line(void);
+	ILVECTOR Unorigin(void)const;
 };
 
 #endif

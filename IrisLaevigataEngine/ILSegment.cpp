@@ -19,3 +19,7 @@ ILLINE ILSEGMENT::Line()
 {
 	return ILLINE(origin.x, origin.y, origin.z, vector.y/vector.x, vector.z/vector.x);
 }
+ILVECTOR ILSEGMENT::Unorigin(void)const
+{
+	return origin + vector;
+}

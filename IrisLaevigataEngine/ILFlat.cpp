@@ -24,3 +24,11 @@ ILFLAT::ILFLAT(const ILSURFACE &Surface)
 	c = cross.z;
 	d = -(cross.x * Surface.a.x + cross.y * Surface.a.y + cross.z * Surface.a.z);
 }
+ILVECTOR ILFLAT::Normal()const
+{
+	return ILVECTOR(a,b,c);
+}
+ILVECTOR ILFLAT::Pass()const
+{
+	return ILVECTOR(this->Normal().Direction(),this->d);
+}

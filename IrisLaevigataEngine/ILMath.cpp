@@ -37,4 +37,9 @@ namespace IL
 		while(s < t);
 		return t;
 	}
+
+	long double ILMath::Abs(const long double &o)
+	{
+		return abs(o);
+	}
 }
