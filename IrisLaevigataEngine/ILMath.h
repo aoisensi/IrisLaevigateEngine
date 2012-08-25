@@ -23,7 +23,7 @@ namespace IL
 
 		static double Sqrt(const double &o);
 
-		static long double Abs(const long double &o);
+		static double Abs(const double &o);
 	};
 }
 

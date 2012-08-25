@@ -12,11 +12,10 @@ namespace IL
 	class ILChk
 	{
 	public:
-		static ILVECTOR result;
 		static bool SurByVecB(const ILSURFACE &Surface, const ILVECTOR &Vector);
-		static bool SegByFlat(const ILSEGMENT &Segment, const ILFLAT &Flat);
+		static bool SegByFlat(const ILSEGMENT &Segment, const ILFLAT &Flat, ILVECTOR &Result);
 		static bool SegByFlatB(const ILSEGMENT &Segment, const ILFLAT &Flat);
-		static bool SegBySur(const ILSEGMENT &Segment, const ILSURFACE &Surface);
+		static bool SegBySur(const ILSEGMENT &Segment, const ILSURFACE &Surface, ILVECTOR &Result);
 	};
 }
 

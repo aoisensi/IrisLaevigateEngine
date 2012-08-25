@@ -38,8 +38,8 @@ namespace IL
 		return t;
 	}
 
-	long double ILMath::Abs(const long double &o)
+	double ILMath::Abs(const double &o)
 	{
-		return abs(o);
+		return o < 0 ? -o : o;
 	}
 }

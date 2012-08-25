@@ -3,16 +3,18 @@
 
 int main()
 {
-	ILVECTOR foo = ILVECTOR(0,10,-20);
-	ILVECTOR bar = ILVECTOR(10,60,10);
-	ILVECTOR test = foo.Sub(bar);
-	ILLINE line = ILLINE();
-	printf("%f,%f,%f\n",test.x,test.y,test.z);
-	printf("Sqrt(2) = %.30f\n",IL::ILMath::Sqrt(2));
-	printf("%f\n",test.Norm());
-	printf("Sin(60) = %.30f\n",IL::ILMath::Sin(30));
-	printf("%f,%f,%f,%f,%f\n",line.pass.x,line.pass.y,line.pass.z,line.dir.xz,line.dir.y);
-	ILFLAT testt = ILFLAT();
+	ILSPACE MainSpace = ILSPACE(255);
+	ILCOLOR Black = ILCOLOR(0,0,0);
+	ILCOLOR White = ILCOLOR(255,255,255);
+	ILBITMAP picture = ILBITMAP(640,480);
+	MainSpace.AddSurface(ILSURFACE(ILVECTOR(100,100,100),ILVECTOR(-100,100,100),ILVECTOR(100,-100,100),Black));
+	MainSpace.AddSurface(ILSURFACE(ILVECTOR(100,100,100),ILVECTOR(100,-100,100),ILVECTOR(100,100,-100),Black));
+	MainSpace.AddSurface(ILSURFACE(ILVECTOR(100,100,100),ILVECTOR(100,100,-100),ILVECTOR(-100,100,100),Black));
+	MainSpace.AddSurface(ILSURFACE(ILVECTOR(-100,100,100),ILVECTOR(100,-100,100),ILVECTOR(100,100,-100),White));
+	ILCAMERA Camera = ILCAMERA(1,10000,ILROTATION(0,0,0),ILVECTOR(0,0,-1000),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255));
+	IL::ILRaytracing* render = new IL::ILRaytracing();
+	render->Rendering(MainSpace,Camera,picture);
 	getchar();
+	picture.dispose();
 	return 0;
 }

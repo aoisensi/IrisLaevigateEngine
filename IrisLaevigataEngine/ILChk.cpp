@@ -3,6 +3,7 @@
 namespace IL
 {
 	const double error = 0.1F;
+
 	bool ILChk::SurByVecB(const ILSURFACE &Surface, const ILVECTOR &Vector)
 	{
 		ILVECTOR v1 = ((Surface.b - Surface.a).Cross(Vector)).Normal();
@@ -22,13 +23,13 @@ namespace IL
 		return false;
 	}
 
-	bool ILChk::SegByFlat(const ILSEGMENT &Segment, const ILFLAT &Flat)
+	bool ILChk::SegByFlat(const ILSEGMENT &Segment, const ILFLAT &Flat, ILVECTOR &Result)
 	{
 		if ( SegByFlatB(Segment, Flat) )
 		{
 			double d1 = IL::ILDist::FlatByVector(Flat, Segment.vector);
 			double d2 = IL::ILDist::FlatByVector(Flat, Segment.Unorigin());
-			result = Segment.vector / (d1 + d2) * d1 + Segment.origin;
+			Result = Segment.vector / (d1 + d2) * d1 + Segment.origin;
 			return true;
 		}
 		return false;
@@ -43,12 +44,14 @@ namespace IL
 		return ( v1.Inner(n) * v2.Inner(n) <= 0 );
 	}
 
-	bool ILChk::SegBySur(const ILSEGMENT &Segment, const ILSURFACE &Surface)
+	bool ILChk::SegBySur(const ILSEGMENT &Segment, const ILSURFACE &Surface, ILVECTOR &Result)
 	{
-		if(SegByFlat(Segment,Surface.Flat()))
+		ILVECTOR v;
+		if(SegByFlat(Segment,Surface.Flat(),v))
 		{
-			if ( SurByVecB(Surface, result) )
+			if ( SurByVecB(Surface, v) )
 			{
+				Result = v;
 				return true;
 			}
 		}
