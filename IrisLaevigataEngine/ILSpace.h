@@ -6,6 +6,7 @@
 
 class ILSPACE
 {
+public:
 	ILSURFACE *surface;
 	
 	int surfacen;

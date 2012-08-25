@@ -28,7 +28,28 @@ void ILRaytracing::Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBIT
 		for(int j=0;j<Bitmap.y;++j)
 		{
 			ILSEGMENT Ray = CreateRay(i/Bitmap.x*2-1,j/Bitmap.y*2-1);
-
+			double m = max;
+			int s = 0;
+			for(int k=0;k<Space.surfacen;++k)
+			{
+				if(IL::ILChk::SegBySur(Ray, Space.surface[k]))
+				{
+					double o = (IL::ILChk::result - Ray.origin).Norm();
+					if(m > o)
+					{
+						m = o;
+						s = k;
+					}
+				}
+			}
+			if(m == max)
+			{
+				Bitmap.PSet(i,j,Camera.backgroundcolor);
+			}
+			else
+			{
+				Bitmap.PSet(i,j,Space.surface[s].color);
+			}
 		}
 	}
 }

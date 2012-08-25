@@ -4,6 +4,7 @@
 #include "ILRotation.h"
 #include "ILVector.h"
 #include "ILAngle.h"
+#include "ILColor.h"
 
 class ILCAMERA
 {
@@ -14,7 +15,8 @@ public:
 	ILVECTOR vector;
 	ILANGLE fovx;
 	ILANGLE fovy;
-	ILCAMERA(const double &Min, const double &Max, const ILROTATION Rotation, const ILVECTOR Vector, const ILANGLE FovX, const ILANGLE FovY);
+	ILCOLOR backgroundcolor;
+	ILCAMERA(const double &Min, const double &Max, const ILROTATION &Rotation, const ILVECTOR &Vector, const ILANGLE &FovX, const ILANGLE &FovY, const ILCOLOR &Color);
 };
 
 #endif

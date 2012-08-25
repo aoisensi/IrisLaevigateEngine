@@ -4,6 +4,7 @@
 #include "ILCamera.h"
 #include "ILSpace.h"
 #include "ILBitmap.h"
+#include "ILChk.h"
 
 class ILRaytracing
 {
