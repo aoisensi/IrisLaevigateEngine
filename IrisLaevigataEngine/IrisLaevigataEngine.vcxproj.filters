@@ -34,7 +34,6 @@
     <ClInclude Include="ILSurface.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
-    <ClInclude Include="ILChk.h" />
     <ClInclude Include="ILPlacement.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
@@ -106,7 +105,6 @@
     <ClCompile Include="ILRotation.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
-    <ClCompile Include="ILChk.cpp" />
     <ClCompile Include="ILDist.cpp" />
   </ItemGroup>
 </Project>

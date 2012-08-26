@@ -24,10 +24,14 @@ void ILBITMAP::PSet(const int &X, const int &Y, const ILCOLOR Color)
 
 void ILBITMAP::dispose()
 {
-	for (int i = 0;i<x;++i)
+	if(dot != 0)
 	{
-		delete[] dot[i];
+		for (int i = 0;i<x;++i)
+		{
+			delete[] dot[i];
+		}
+		delete[] dot;
+		dot = 0;
 	}
-	delete[] dot;
 	return;
 }

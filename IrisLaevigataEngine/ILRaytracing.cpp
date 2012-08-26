@@ -15,10 +15,11 @@ namespace IL
 	ILSEGMENT ILRaytracing::CreateRay(const double &x,const double &y)const
 	{
 		ILSEGMENT result;
-		ILDIRECTION Dir = ILDIRECTION(width.angle * x + rotation.x.angle, height.angle * y + rotation.y.angle);
+		ILDIRECTION Dir = ILDIRECTION(width.angle * x, height.angle * y);
 		Dir = ILDIRECTION(Dir.xz*IL::ILMath::Cos(rotation.z) - Dir.y*IL::ILMath::Sin(rotation.z), Dir.xz*IL::ILMath::Sin(rotation.z) + Dir.y*IL::ILMath::Cos(rotation.z));
-		result.origin = ILVECTOR(ILDIRECTION(rotation.x,rotation.y),min) + origin;
-		result.vector = ILVECTOR(ILDIRECTION(rotation.x,rotation.y),max) + origin;
+		Dir = ILDIRECTION(Dir.xz + rotation.x, Dir.y + rotation.y);
+		result.origin = ILVECTOR(ILDIRECTION(Dir.xz,Dir.y),min) + origin;
+		result.vector = ILVECTOR(ILDIRECTION(Dir.xz,Dir.y),max);
 		return result;
 	}
 
@@ -29,15 +30,16 @@ namespace IL
 		{
 			for(int j=0;j<Bitmap.y;++j)
 			{
-				ILSEGMENT Ray = CreateRay(i/Bitmap.x*2-1,j/Bitmap.y*2-1);
+				ILSEGMENT Ray = CreateRay(2.0F*i/Bitmap.x-1.0F, 2.0F*j/Bitmap.y-1.0F);
 				double m = max;
 				int s = 0;
 				for(int k=0;k<Space.surfacen;++k)
 				{
 					ILVECTOR Result;
-					if(IL::ILChk::SegBySur(Ray, Space.surface[k],Result))
+					double T,U,V;
+					if(RayCheck(Ray, Space.surface[k],T,U,V))
 					{
-						double o = (Result - Ray.origin).Norm();
+						double o = T;
 						if(m > o)
 						{
 							m = o;
@@ -55,5 +57,58 @@ namespace IL
 				}
 			}
 		}
+	}
+
+	bool ILRaytracing::RayCheck(const ILSEGMENT &Segment,const ILSURFACE &Surface, double &T, double &U, double &V)
+	{
+		//http://ft-lab.ne.jp/cgi-bin/wiki.cgi?page=%B8%F2%BA%B9%C8%BD%C4%EA_3DCG
+		ILVECTOR e1 = Surface.b - Surface.a;
+		ILVECTOR e2 = Surface.c - Surface.a;
+		ILVECTOR pvec = e2.Cross(Segment.vector);
+		ILVECTOR tvec, qvec;
+		double t,u,v;
+		double det = e1.Inner(pvec);
+		if(det < 1e-3)
+		{
+			tvec = Segment.origin - Surface.a;
+			u = tvec.Inner(pvec);
+			if(u<0.0F || u>det)
+			{
+				return false;
+			}
+			qvec = tvec.Cross(Surface.b);
+			v = qvec.Inner(Segment.vector);
+			if (v < 0.0 || u + v > det)
+			{
+				return false;
+			}
+		}
+		else if (det < -(1e-3))
+		{
+			tvec = Segment.origin - Surface.a;
+			u = tvec.Inner(pvec);
+			if(u>0.0F || u<det)
+			{
+				return false;
+			}
+			qvec = tvec.Cross(Surface.b);
+			v = qvec.Inner(Segment.vector);
+			if (v > 0.0 || u + v < det)
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+		double inv_det = 1.0f / det;
+
+		t = e2.Inner(qvec);
+		T = inv_det * t;
+		U = inv_det * u;
+		V = inv_det * v;
+
+		return true;
 	}
 }

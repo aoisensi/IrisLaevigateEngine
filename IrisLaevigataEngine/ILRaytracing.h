@@ -4,13 +4,12 @@
 #include "ILCamera.h"
 #include "ILSpace.h"
 #include "ILBitmap.h"
-#include "ILChk.h"
 
 namespace IL
 {
 	class ILRaytracing
 	{
-	private:
+	public:
 		double min;
 		double max;
 		ILROTATION rotation;
@@ -19,7 +18,7 @@ namespace IL
 		ILVECTOR origin;
 		void CreatRayInit(const double &Min, const double &Max, const ILROTATION Rotation, const ILANGLE &Width, const ILANGLE &Height, const ILVECTOR &Origin);
 		ILSEGMENT CreateRay(const double &x,const double &y)const;
-	public:
 		void Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBITMAP &Bitmap);
+		bool RayCheck(const ILSEGMENT &Segment,const ILSURFACE &Surface, double &T, double &U, double &V);
 	};
 }

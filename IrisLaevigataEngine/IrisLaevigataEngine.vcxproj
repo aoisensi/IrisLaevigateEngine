@@ -75,7 +75,6 @@
     <ClInclude Include="ILAngle.h" />
     <ClInclude Include="ILBitmap.h" />
     <ClInclude Include="ILCamera.h" />
-    <ClInclude Include="ILChk.h" />
     <ClInclude Include="ILColor.h" />
     <ClInclude Include="ILDirection.h" />
     <ClInclude Include="ILDist.h" />
@@ -96,7 +95,6 @@
     <ClCompile Include="ILAngle.cpp" />
     <ClCompile Include="ILBitmap.cpp" />
     <ClCompile Include="ILCamera.cpp" />
-    <ClCompile Include="ILChk.cpp" />
     <ClCompile Include="ILColor.cpp" />
     <ClCompile Include="ILDirection.cpp" />
     <ClCompile Include="ILDist.cpp" />

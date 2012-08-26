@@ -1,9 +1,18 @@
-﻿2012/08/25 16:33:50 にビルドを開始しました。
-     1>ノード 3 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (clean ターゲット)。
-     1>_PrepareForClean:
-         ファイル "Debug\Test.lastbuildstate" を削除しています。
-     1>プロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (clean ターゲット) のビルドが完了しました。
+﻿2012/08/25 18:37:28 にビルドを開始しました。
+     1>ノード 3 上のプロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (build ターゲット)。
+     1>InitializeBuildStatus:
+         "AlwaysCreate" が指定されたため "Debug\Test.unsuccessfulbuild" を作成しています。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\test\main.cpp(12): error C3083: 'ILChk': '::' の左側のシンボルには、型を指定しなければなりません
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\test\main.cpp(12): error C2039: 'SegBySur' : 'IL' のメンバーではありません。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\test\main.cpp(12): error C3861: 'SegBySur': 識別子が見つかりませんでした
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\test\main.cpp(24): error C3083: 'ILChk': '::' の左側のシンボルには、型を指定しなければなりません
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\test\main.cpp(24): error C2039: 'SegBySur' : 'IL' のメンバーではありません。
+     1>c:\users\aoisensi\documents\visual studio 2010\3dengine\irislaevigataengine\test\main.cpp(24): error C3861: 'SegBySur': 識別子が見つかりませんでした
+     1>プロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (build ターゲット) のビルドが終了しました -- 失敗。
 
-ビルドに成功しました。
+ビルドに失敗しました。
 
-経過時間 00:00:00.02
+経過時間 00:00:01.88

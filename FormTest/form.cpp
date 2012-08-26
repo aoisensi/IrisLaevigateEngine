@@ -5,12 +5,12 @@
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 BOOL SetClientSize(HWND hWnd, int width, int height);
 
-ILBITMAP bmp = ILBITMAP(640,480);;
+ILBITMAP bmp = ILBITMAP(640,480);
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 {
 
-	ILSPACE MainSpace = ILSPACE(255);
+	ILSPACE MainSpace(255);
 	ILCOLOR Black = ILCOLOR(0,0,0);
 	ILCOLOR White = ILCOLOR(255,255,255);
 	MainSpace.AddSurface(ILSURFACE(ILVECTOR(100,100,100),ILVECTOR(-100,100,100),ILVECTOR(100,-100,100),Black));
@@ -20,6 +20,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 	ILCAMERA Camera = ILCAMERA(1,10000,ILROTATION(0,0,0),ILVECTOR(0,0,-1000),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255));
 	IL::ILRaytracing* Rendering = new IL::ILRaytracing();
 	Rendering->Rendering(MainSpace,Camera,bmp);
+	MainSpace.dispose();
 
 
 	WNDCLASSEX wc;

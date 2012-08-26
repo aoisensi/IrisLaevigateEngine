@@ -17,6 +17,8 @@ ILVECTOR::ILVECTOR(const double &X,const double &Y,const double &Z)
 ILVECTOR::ILVECTOR(const ILDIRECTION &Direction, const double &Norm)
 {
 	this->x = Norm * IL::ILMath::Cos(Direction.xz) * IL::ILMath::Cos(Direction.y);
+	this->y = Norm * IL::ILMath::Sin(Direction.y);
+	this->z = Norm * IL::ILMath::Sin(Direction.xz) * IL::ILMath::Cos(Direction.y);
 }
 
 ILVECTOR ILVECTOR::Add(const ILVECTOR &obj)const

@@ -1,5 +1,5 @@
 #include "ILChk.h"
-
+#include <iostream>
 namespace IL
 {
 	const double error = 0.1F;
