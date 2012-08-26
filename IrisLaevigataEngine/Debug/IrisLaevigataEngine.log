@@ -1,10 +1,13 @@
-﻿2012/08/27 0:28:53 にビルドを開始しました。
+﻿2012/08/27 3:06:18 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\IrisLaevigataEngine.unsuccessfulbuild" を作成しています。
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILBitmap.cpp
-         ILBitmap.cpp
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILRaytracing.cpp IrisLaevigataEngine.h
+         ILRaytracing.cpp
+         コードを生成中...
+         スキップ中... (関連する変更は検出されませんでした)
+         IrisLaevigataEngine.h
        Lib:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib" /NOLOGO Debug\ILAngle.obj
          Debug\ILBall.obj
@@ -36,4 +39,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:00.45
+経過時間 00:00:00.86

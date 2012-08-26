@@ -48,13 +48,12 @@ namespace IL
 				}
 				for(int k=0;k<Space.numberofball;++k)
 				{
-					ILVECTOR Distance;
+					double Distance;
 					if(ChkBall(Space.Ball(k).ball, Ray, Distance))
 					{
-						double norm = Distance.Norm();
-						if(m > norm)
+						if(m > Distance)
 						{
-							m = norm;
+							m = Distance;
 							BitColor = Space.Ball(k).color;
 						}
 					}
@@ -64,16 +63,17 @@ namespace IL
 		}
 	}
 
-	bool ILRaytracing::ChkBall(const ILBALL &Ball, const ILSEGMENT &Segment, ILVECTOR &Near)
+	bool ILRaytracing::ChkBall(const ILBALL &Ball, const ILSEGMENT &Segment, double &Distance)
 	{
 		//http://marupeke296.com/COL_3D_No1_PointToLine.html
 		ILVECTOR vP = Ball.vector - Segment.origin;
 		double t = Segment.vector.Normalize().Dot(vP) / Segment.vector.Norm();
 		ILVECTOR PsH = Segment.vector * t;
 		ILVECTOR h = PsH - vP;
-		if(h.Norm() < Ball.radius)
+		double norm = h.Norm();
+		if(norm < Ball.radius)
 		{
-			Near = h;
+			Distance = PsH.Norm() - IL::ILMath::Sqrt(Ball.radius*Ball.radius - norm*norm);
 			return true;
 		}
 		return false;

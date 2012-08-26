@@ -21,6 +21,6 @@ namespace IL
 		void CreatRayInit(const double &Min, const double &Max, const ILROTATION Rotation, const ILANGLE &FovX, const ILANGLE &FovY, const ILVECTOR &Origin, const int &Width, const int &Height);
 		ILSEGMENT CreateRay(const int &x,const int &y)const;
 		void Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBITMAP &Bitmap);
-		bool ChkBall(const ILBALL &Ball, const ILSEGMENT &Segment, ILVECTOR &Distance);
+		bool ChkBall(const ILBALL &Ball, const ILSEGMENT &Segment, double &Distance);
 	};
 }

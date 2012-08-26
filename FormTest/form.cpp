@@ -5,7 +5,7 @@
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 BOOL SetClientSize(HWND hWnd, int width, int height);
 
-const int AA = 16;
+const int AA = 4;
 const int bmpx = 640;
 const int bmpy = 480;
 ILBITMAP bmp = ILBITMAP(bmpx*AA,bmpy*AA);
