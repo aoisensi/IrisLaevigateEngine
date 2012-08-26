@@ -1,21 +1,30 @@
 #ifndef H_ILSPACE
 #define H_ILSPACE
 
-#include "ILSurface.h"
-#include "ILEllipsoid.h"
+#include "ILVSurface.h"
+#include "ILVEllipsoid.h"
+#include "ILVBall.h"
 
 class ILSPACE
 {
 public:
-	ILSURFACE *surface;
+	ILVSURFACE *surface;
+	ILVELLIPSOID *ellipsoid;
+	ILVBALL *ball;
+	int numberofsurface;
+	int numberofellipsoid;
+	int numberofball;
 	
-	int surfacen;
-	
-	ILSPACE(const int &SurfaceC);
-	
+	ILSPACE(const int &SurfaceC, const int &EllipsoidC, const int &BallC);
+
 	void dispose(void);
-	void AddSurface(ILSURFACE &Surface);
-	ILSURFACE Surface(int n);
+	void AddSurface(const ILVSURFACE &Surface);
+	void AddEllipsoid(const ILVELLIPSOID &Ellipsoid);
+	void AddBall(const ILVBALL &Ball);
+
+	ILVSURFACE Surface(const int &n)const;
+	ILVELLIPSOID Ellipsoid(const int &n)const;
+	ILVBALL Ball(const int &n)const;
 };
 
 #endif 

@@ -72,12 +72,12 @@ ILVECTOR ILVECTOR::operator/(const double& right)const
 	return ILVECTOR(x*value, y*value, z*value);
 }
 
-double ILVECTOR::Inner(const ILVECTOR &value)
+double ILVECTOR::Dot(const ILVECTOR &value)const
 {
 	return ( x * value.x + y * value.y + z * value.z );
 }
 
-ILVECTOR ILVECTOR::Cross(const ILVECTOR &value)
+ILVECTOR ILVECTOR::Cross(const ILVECTOR &value)const
 {
 	return ILVECTOR(this->y * value.z - value.y * this->z,
 		this->z * value.x - value.z * this->x,
@@ -93,7 +93,7 @@ ILVECTOR ILVECTOR::Center(const ILVECTOR &value)
 	return tmp;
 }
 
-double ILVECTOR::Norm()
+double ILVECTOR::Norm()const
 {
 	return ( IL::ILMath::Sqrt( x * x + y * y + z * z ) );
 }
@@ -106,7 +106,8 @@ ILDIRECTION ILVECTOR::Direction()
 	return result;
 }
 
-ILVECTOR ILVECTOR::Normal()const
+ILVECTOR ILVECTOR::Normalize()const
 {
-	return ILVECTOR(1/y/z,1/x/z,1/x/y);
+	double norm = this->Norm();
+	return ILVECTOR(x/norm,y/norm,z/norm);
 }

@@ -13,12 +13,13 @@ namespace IL
 		double min;
 		double max;
 		ILROTATION rotation;
-		ILANGLE width;
-		ILANGLE height;
+		ILANGLE fovx;
+		ILANGLE fovy;
+		int width, height;
 		ILVECTOR origin;
-		void CreatRayInit(const double &Min, const double &Max, const ILROTATION Rotation, const ILANGLE &Width, const ILANGLE &Height, const ILVECTOR &Origin);
-		ILSEGMENT CreateRay(const double &x,const double &y)const;
+		void CreatRayInit(const double &Min, const double &Max, const ILROTATION Rotation, const ILANGLE &FovX, const ILANGLE &FovY, const ILVECTOR &Origin, const int &Width, const int &Height);
+		ILSEGMENT CreateRay(const int &x,const int &y)const;
 		void Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBITMAP &Bitmap);
-		bool RayCheck(const ILSEGMENT &Segment,const ILSURFACE &Surface, double &T, double &U, double &V);
+		bool ChkBall(const ILBALL &Ball, const ILSEGMENT &Segment, ILVECTOR &Distance);
 	};
 }

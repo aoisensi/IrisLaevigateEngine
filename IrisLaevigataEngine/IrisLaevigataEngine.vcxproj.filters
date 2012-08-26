@@ -58,6 +58,18 @@
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILDist.h" />
+    <ClInclude Include="ILVSurface.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILVEllipsoid.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILBall.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILVBall.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -106,5 +118,17 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILDist.cpp" />
+    <ClCompile Include="ILVSurface.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILVEllipsoid.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILBall.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILVBall.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

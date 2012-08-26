@@ -6,27 +6,29 @@ using namespace std;
 int main()
 {
 	ILSEGMENT testseg = ILSEGMENT(0,100,0,0,-100,0);
-	ILSURFACE testsur = ILSURFACE(100,0,-50,-100,0,-50,0,0,100,ILCOLOR());
-	ILSURFACE testsuf = ILSURFACE(0,0,100,-100,0,-50,100,0,-50,ILCOLOR());
+	ILVSURFACE testsur = ILVSURFACE(ILSURFACE(100,0,-50,-100,0,-50,0,0,100),ILCOLOR());
+	ILVSURFACE testsuf = ILVSURFACE(ILSURFACE(0,0,100,-100,0,-50,100,0,-50),ILCOLOR());
 	ILVECTOR testvec;
-	if(IL::ILChk::SegBySur(testseg,testsur,testvec))
+	double t,u,v;
+	IL::ILRaytracing render;
+	if(render.RayCheckSurface(testseg,testsur.surface,t,u,v))
 	{
 		cout << "true" << endl;
-		cout << testvec.x << endl;
-		cout << testvec.y << endl;
-		cout << testvec.z << endl;
+		cout << t << endl;
+		cout << u << endl;
+		cout << v << endl;
 	}
 	else
 	{
 		cout << "false" << endl;
 	}
 	testvec;
-	if(IL::ILChk::SegBySur(testseg,testsuf,testvec))
+	if(render.RayCheckSurface(testseg,testsuf.surface,t,u,v))
 	{
 		cout << "true" << endl;
-		cout << testvec.x << endl;
-		cout << testvec.y << endl;
-		cout << testvec.z << endl;
+		cout << t << endl;
+		cout << u << endl;
+		cout << v << endl;
 	}
 	else
 	{

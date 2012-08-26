@@ -1,23 +1,28 @@
 #include "ILRaytracing.h"
+#include <Windows.h>
+#include <tchar.h>
+#include <stdio.h>
 
 namespace IL
 {
-	void ILRaytracing::CreatRayInit(const double &Min, const double &Max, const ILROTATION Rotation, const ILANGLE &Width, const ILANGLE &Height, const ILVECTOR &Origin)
+	void ILRaytracing::CreatRayInit(const double &Min, const double &Max, const ILROTATION Rotation, const ILANGLE &FovX, const ILANGLE &FovY, const ILVECTOR &Origin, const int &Width, const int &Height)
 	{
 		min = Min;
 		max = Max - Min;
-		rotation = Rotation;
-		width = Width;
-		height = Height;
+		rotation = ILROTATION(Rotation.x.angle,Rotation.y.angle-90,Rotation.z.angle);
+		fovx = FovX;
+		fovy = FovY;
 		origin = Origin;
+		height = Height-1;
+		width = Width-1;
 	}
 
-	ILSEGMENT ILRaytracing::CreateRay(const double &x,const double &y)const
+	ILSEGMENT ILRaytracing::CreateRay(const int &x,const int &y)const
 	{
 		ILSEGMENT result;
-		ILDIRECTION Dir = ILDIRECTION(width.angle * x, height.angle * y);
-		Dir = ILDIRECTION(Dir.xz*IL::ILMath::Cos(rotation.z) - Dir.y*IL::ILMath::Sin(rotation.z), Dir.xz*IL::ILMath::Sin(rotation.z) + Dir.y*IL::ILMath::Cos(rotation.z));
-		Dir = ILDIRECTION(Dir.xz + rotation.x, Dir.y + rotation.y);
+		ILDIRECTION Dir = ILDIRECTION((2.0F * x / width - 1.0F) * fovx.angle, (2.0F * y / height - 1.0F) * fovy.angle);
+		Dir = ILDIRECTION(Dir.xz.angle * IL::ILMath::Cos(rotation.z) - Dir.y.angle * IL::ILMath::Sin(rotation.z), Dir.xz.angle * IL::ILMath::Sin(rotation.z) + Dir.y.angle * IL::ILMath::Cos(rotation.z));
+		Dir = ILDIRECTION(ILANGLE(Dir.xz + rotation.y), ILANGLE(Dir.y + rotation.x));
 		result.origin = ILVECTOR(ILDIRECTION(Dir.xz,Dir.y),min) + origin;
 		result.vector = ILVECTOR(ILDIRECTION(Dir.xz,Dir.y),max);
 		return result;
@@ -25,90 +30,52 @@ namespace IL
 
 	void ILRaytracing::Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBITMAP &Bitmap)
 	{
-		CreatRayInit(Camera.min,Camera.max,Camera.rotation,Camera.fovx,Camera.fovy,Camera.vector);
-		for (int i=0;i<Bitmap.x;++i)
+		CreatRayInit(Camera.min,Camera.max,Camera.rotation,Camera.fovx,Camera.fovy,Camera.vector,Bitmap.x,Bitmap.y);
+		for (int i=0;i<Bitmap.y;++i)
 		{
-			for(int j=0;j<Bitmap.y;++j)
+			for(int j=0;j<Bitmap.x;++j)
 			{
-				ILSEGMENT Ray = CreateRay(2.0F*i/Bitmap.x-1.0F, 2.0F*j/Bitmap.y-1.0F);
+				ILCOLOR BitColor = Camera.backgroundcolor;
+				ILSEGMENT Ray = CreateRay(j,i);
 				double m = max;
-				int s = 0;
-				for(int k=0;k<Space.surfacen;++k)
+				for(int k=0;k<Space.numberofsurface;++k)
 				{
-					ILVECTOR Result;
-					double T,U,V;
-					if(RayCheck(Ray, Space.surface[k],T,U,V))
+					//tmp
+				}
+				for(int k=0;k<Space.numberofellipsoid;++k)
+				{
+					//tmp
+				}
+				for(int k=0;k<Space.numberofball;++k)
+				{
+					ILVECTOR Distance;
+					if(ChkBall(Space.Ball(k).ball, Ray, Distance))
 					{
-						double o = T;
-						if(m > o)
+						double norm = Distance.Norm();
+						if(m > norm)
 						{
-							m = o;
-							s = k;
+							m = norm;
+							BitColor = Space.Ball(k).color;
 						}
 					}
 				}
-				if(m == max)
-				{
-					Bitmap.PSet(i,j,Camera.backgroundcolor);
-				}
-				else
-				{
-					Bitmap.PSet(i,j,Space.surface[s].color);
-				}
+				Bitmap.PSet(j,i,BitColor);
 			}
 		}
 	}
 
-	bool ILRaytracing::RayCheck(const ILSEGMENT &Segment,const ILSURFACE &Surface, double &T, double &U, double &V)
+	bool ILRaytracing::ChkBall(const ILBALL &Ball, const ILSEGMENT &Segment, ILVECTOR &Near)
 	{
-		//http://ft-lab.ne.jp/cgi-bin/wiki.cgi?page=%B8%F2%BA%B9%C8%BD%C4%EA_3DCG
-		ILVECTOR e1 = Surface.b - Surface.a;
-		ILVECTOR e2 = Surface.c - Surface.a;
-		ILVECTOR pvec = e2.Cross(Segment.vector);
-		ILVECTOR tvec, qvec;
-		double t,u,v;
-		double det = e1.Inner(pvec);
-		if(det < 1e-3)
+		//http://marupeke296.com/COL_3D_No1_PointToLine.html
+		ILVECTOR vP = Ball.vector - Segment.origin;
+		double t = Segment.vector.Normalize().Dot(vP) / Segment.vector.Norm();
+		ILVECTOR PsH = Segment.vector * t;
+		ILVECTOR h = PsH - vP;
+		if(h.Norm() < Ball.radius)
 		{
-			tvec = Segment.origin - Surface.a;
-			u = tvec.Inner(pvec);
-			if(u<0.0F || u>det)
-			{
-				return false;
-			}
-			qvec = tvec.Cross(Surface.b);
-			v = qvec.Inner(Segment.vector);
-			if (v < 0.0 || u + v > det)
-			{
-				return false;
-			}
+			Near = h;
+			return true;
 		}
-		else if (det < -(1e-3))
-		{
-			tvec = Segment.origin - Surface.a;
-			u = tvec.Inner(pvec);
-			if(u>0.0F || u<det)
-			{
-				return false;
-			}
-			qvec = tvec.Cross(Surface.b);
-			v = qvec.Inner(Segment.vector);
-			if (v > 0.0 || u + v < det)
-			{
-				return false;
-			}
-		}
-		else
-		{
-			return false;
-		}
-		double inv_det = 1.0f / det;
-
-		t = e2.Inner(qvec);
-		T = inv_det * t;
-		U = inv_det * u;
-		V = inv_det * v;
-
-		return true;
+		return false;
 	}
 }

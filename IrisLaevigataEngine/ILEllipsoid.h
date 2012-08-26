@@ -6,6 +6,7 @@
 
 class ILELLIPSOID
 {
+public:
 	double a,b,c;
 	ILVECTOR vec;
 	ILDIRECTION dir;

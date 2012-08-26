@@ -1,4 +1,5 @@
 #include "ILAngle.h"
+#include "ILBall.h"
 #include "ILBitmap.h"
 #include "ILCamera.h"
 #include "ILColor.h"
@@ -11,5 +12,7 @@
 #include "ILSegment.h"
 #include "ILSpace.h"
 #include "ILSurface.h"
+#include "ILVEllipsoid.h"
+#include "ILVSurface.h"
 #include "ILVector.h"
 

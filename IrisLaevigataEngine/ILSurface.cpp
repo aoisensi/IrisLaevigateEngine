@@ -5,21 +5,18 @@ ILSURFACE::ILSURFACE()
 	a = ILVECTOR();
 	b = ILVECTOR();
 	c = ILVECTOR();
-	color = ILCOLOR();
 }
-ILSURFACE::ILSURFACE(const ILVECTOR &A, const ILVECTOR &B, const ILVECTOR &C, const ILCOLOR &Color)
+ILSURFACE::ILSURFACE(const ILVECTOR &A, const ILVECTOR &B, const ILVECTOR &C)
 {
 	a = A;
 	b = B;
 	c = C;
-	color = Color;
 }
-ILSURFACE::ILSURFACE(const double &ax, const double &ay, const double &az, const double &bx, const double &by, const double &bz, const double &cx, const double &cy, const double &cz, const ILCOLOR &Color)
+ILSURFACE::ILSURFACE(const double &ax, const double &ay, const double &az, const double &bx, const double &by, const double &bz, const double &cx, const double &cy, const double &cz)
 {
 	a = ILVECTOR(ax,ay,az);
 	b = ILVECTOR(bx,by,bz);
 	c = ILVECTOR(cx,cy,cz);
-	color = Color;
 }
 
 ILFLAT ILSURFACE::Flat()const

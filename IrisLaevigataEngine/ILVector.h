@@ -24,12 +24,12 @@ public:
 	ILVECTOR operator-(const ILVECTOR& right)const;
 	ILVECTOR operator*(const double& right)const;
 	ILVECTOR operator/(const double& right)const;
-	double Inner(const ILVECTOR &value);
-	ILVECTOR Cross(const ILVECTOR &value);
+	double Dot(const ILVECTOR &value)const;
+	ILVECTOR Cross(const ILVECTOR &value)const;
 	ILVECTOR Center(const ILVECTOR &value);
-	double Norm(void);
+	double Norm(void)const;
 	ILDIRECTION Direction(void);
-	ILVECTOR Normal(void)const;
+	ILVECTOR Normalize(void)const;
 };
 
 #endif

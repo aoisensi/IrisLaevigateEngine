@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ILAngle.h" />
+    <ClInclude Include="ILBall.h" />
     <ClInclude Include="ILBitmap.h" />
     <ClInclude Include="ILCamera.h" />
     <ClInclude Include="ILColor.h" />
@@ -87,12 +88,16 @@
     <ClInclude Include="ILSegment.h" />
     <ClInclude Include="ILSpace.h" />
     <ClInclude Include="ILSurface.h" />
+    <ClInclude Include="ILVBall.h" />
     <ClInclude Include="ILVector.h" />
     <ClInclude Include="ILMath.h" />
     <ClInclude Include="ILTypeInclude.h" />
+    <ClInclude Include="ILVEllipsoid.h" />
+    <ClInclude Include="ILVSurface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ILAngle.cpp" />
+    <ClCompile Include="ILBall.cpp" />
     <ClCompile Include="ILBitmap.cpp" />
     <ClCompile Include="ILCamera.cpp" />
     <ClCompile Include="ILColor.cpp" />
@@ -108,7 +113,10 @@
     <ClCompile Include="ILSegment.cpp" />
     <ClCompile Include="ILSpace.cpp" />
     <ClCompile Include="ILSurface.cpp" />
+    <ClCompile Include="ILVBall.cpp" />
     <ClCompile Include="ILVector.cpp" />
+    <ClCompile Include="ILVEllipsoid.cpp" />
+    <ClCompile Include="ILVSurface.cpp" />
     <ClCompile Include="IrisLaevigataEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

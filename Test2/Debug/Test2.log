@@ -1,25 +1,26 @@
-﻿2012/08/26 12:31:23 にビルドを開始しました。
-     1>ノード 3 上のプロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (build ターゲット)。
+﻿2012/08/26 20:33:34 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\Test2.unsuccessfulbuild" を作成しています。
        GenerateTargetFrameworkMonikerAttribute:
        すべての出力ファイルが入力ファイルに対して最新なので、ターゲット "GenerateTargetFrameworkMonikerAttribute" を省略します。
        ClCompile:
-         すべての出力が最新のものです。
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine" /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /analyze- /errorReport:prompt main.cpp /clr:nostdlib 
+         main.cpp
          すべての出力が最新のものです。
        Link:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\Test2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\main.obj
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\Test2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\main.obj
          "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
-         "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib"
+         "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib"
      1>IrisLaevigataEngine.lib(ILVector.obj) : warning LNK4075: /EDITANDCONTINUE は /INCREMENTAL:NO の指定によって無視されます。
-         Test2.vcxproj -> C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe
+         Test2.vcxproj -> C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe
        Manifest:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe;#1" /manifest Debug\Test2.exe.intermediate.manifest
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe;#1" /manifest Debug\Test2.exe.intermediate.manifest
        FinalizeBuildStatus:
          ファイル "Debug\Test2.unsuccessfulbuild" を削除しています。
          "Debug\Test2.lastbuildstate" のタッチ タスクを実行しています。
-     1>プロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (build ターゲット) のビルドが完了しました。
+     1>プロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:00.36
+経過時間 00:00:01.25
