@@ -15,6 +15,7 @@ public:
 	ILCOLOR PGet(const int &X, const int &Y);
 	void PSet(const int &X, const int &Y, const ILCOLOR Color);
 	void dispose();
+	void Reduction(const int &n, ILBITMAP &output);
 };
 
 #endif

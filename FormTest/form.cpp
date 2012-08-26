@@ -5,7 +5,11 @@
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 BOOL SetClientSize(HWND hWnd, int width, int height);
 
-ILBITMAP bmp = ILBITMAP(640,480);
+const int AA = 16;
+const int bmpx = 640;
+const int bmpy = 480;
+ILBITMAP bmp = ILBITMAP(bmpx*AA,bmpy*AA);
+ILBITMAP picture = ILBITMAP(bmpx,bmpy);
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 {
@@ -17,6 +21,8 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 	ILCAMERA Camera = ILCAMERA(1,1000,ILROTATION(0,0,0),ILVECTOR(0,0,-800),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255));
 	IL::ILRaytracing* Rendering = new IL::ILRaytracing();
 	Rendering->Rendering(MainSpace,Camera,bmp);
+	bmp.Reduction(AA,picture);
+	bmp.dispose();
 	MainSpace.dispose();
 
 
@@ -41,7 +47,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 
 	HWND hWnd = CreateWindow( _T("ilformtest"), _T("WindowName"), WS_VISIBLE | WS_SYSMENU , 100, 100, 100, 100, NULL, NULL, hInst, NULL );
 	
-	if(!SetClientSize(hWnd,640,480))
+	if(!SetClientSize(hWnd,bmpx,bmpy))
 	{
 		return 0;
 	}
@@ -62,7 +68,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 			DispatchMessage(&msg);
 		}
 	}
-	bmp.dispose();
+	picture.dispose();
 	UnregisterClass(_T("ilformtest"), hInst);
 	return 0;
 }
@@ -77,11 +83,11 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 	case WM_PAINT:
 		PAINTSTRUCT ps;
 		HDC hDC = BeginPaint( hWnd, &ps );
-		for(int i = 0;i<bmp.x;++i)
+		for(int i = 0;i<picture.x;++i)
 		{
-			for(int j = 0;j<bmp.y;++j)
+			for(int j = 0;j<picture.y;++j)
 			{
-				ILCOLOR bit = bmp.PGet(i,j);
+				ILCOLOR bit = picture.PGet(i,j);
 				SetPixelV(hDC,i,j,RGB(bit.r,bit.g,bit.b));
 			}
 		}

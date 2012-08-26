@@ -35,3 +35,28 @@ void ILBITMAP::dispose()
 	}
 	return;
 }
+
+void ILBITMAP::Reduction(const int &n, ILBITMAP &output)
+{
+	for(int i=0 ; i<output.x ; ++i)
+	{
+		for(int j=0 ; j<output.y ; ++j)
+		{
+			int ar = 0;
+			int ag = 0;
+			int ab = 0;
+			for(int k=0 ; k<n ; ++k)
+			{
+				for(int l=0 ; l<n ; ++l)
+				{
+					ILCOLOR bit = this->PGet(i*n+k, j*n+l);
+					ar += bit.r;
+					ag += bit.g;
+					ab += bit.b;
+				}
+			}
+			ILCOLOR dot = ILCOLOR(ar/n/n, ag/n/n, ab/n/n);
+			output.PSet(i,j,dot);
+		}
+	}
+}
