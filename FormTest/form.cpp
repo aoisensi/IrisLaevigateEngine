@@ -17,7 +17,7 @@ const int bmpx = 640;
 const int bmpy = 480;
 ILBITMAP bmp = ILBITMAP(bmpx*AA,bmpy*AA);
 ILBITMAP picture = ILBITMAP(bmpx,bmpy);
-IL::ILRaytracing Render;
+IL::ILZBuffer Render;
 ILSPACE MainSpace(16,0,16);
 ILCAMERA Camera = ILCAMERA(1,1000,ILROTATION(0,0,0),ILVECTOR(0,0,-800),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255));
 int starttime;

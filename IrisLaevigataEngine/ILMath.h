@@ -17,6 +17,8 @@ namespace IL
 
 		static double Cos(const ILANGLE &o);
 
+		static double Tan(const ILANGLE &o);
+
 		static ILANGLE Atan(const double &o);
 
 		static ILANGLE Atan2(const double &y,const double &x);

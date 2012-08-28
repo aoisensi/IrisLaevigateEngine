@@ -29,6 +29,7 @@ void ILBITMAP::dispose()
 		for (int i = 0;i<x;++i)
 		{
 			delete[] dot[i];
+			dot[i] = 0;
 		}
 		delete[] dot;
 		dot = 0;

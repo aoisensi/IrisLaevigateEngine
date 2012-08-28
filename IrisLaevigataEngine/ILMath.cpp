@@ -12,6 +12,11 @@ namespace IL
 		return cos(M_DEGREE * o.angle);
 	}
 
+	double ILMath::Tan(const ILANGLE &o)
+	{
+		return tan(M_DEGREE * o.angle);
+	}
+
 	ILANGLE ILMath::Atan(const double &o)
 	{
 		return ILANGLE(atan(o) * M_1_DEGREE);

@@ -34,9 +34,6 @@
     <ClInclude Include="ILSurface.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
-    <ClInclude Include="ILPlacement.h">
-      <Filter>TypeHedder</Filter>
-    </ClInclude>
     <ClInclude Include="ILTypeInclude.h" />
     <ClInclude Include="ILSpace.h">
       <Filter>TypeHedder</Filter>
@@ -57,7 +54,6 @@
     <ClInclude Include="ILRotation.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
-    <ClInclude Include="ILDist.h" />
     <ClInclude Include="ILVSurface.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
@@ -70,6 +66,10 @@
     <ClInclude Include="ILVBall.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
+    <ClInclude Include="ILVector2.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILZBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -94,9 +94,6 @@
     <ClCompile Include="ILSurface.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
-    <ClCompile Include="ILPlacement.cpp">
-      <Filter>TypeCpp</Filter>
-    </ClCompile>
     <ClCompile Include="ILMath.cpp" />
     <ClCompile Include="ILSpace.cpp">
       <Filter>TypeCpp</Filter>
@@ -117,7 +114,6 @@
     <ClCompile Include="ILRotation.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
-    <ClCompile Include="ILDist.cpp" />
     <ClCompile Include="ILVSurface.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
@@ -130,5 +126,9 @@
     <ClCompile Include="ILVBall.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
+    <ClCompile Include="ILVector2.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILZBuffer.cpp" />
   </ItemGroup>
 </Project>

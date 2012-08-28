@@ -2,6 +2,6 @@
 
 #include "ILTypeInclude.h"
 
-#include "ILDist.h"
-
 #include "ILRaytracing.h"
+
+#include "ILZBuffer.h"

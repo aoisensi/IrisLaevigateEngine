@@ -78,11 +78,9 @@
     <ClInclude Include="ILCamera.h" />
     <ClInclude Include="ILColor.h" />
     <ClInclude Include="ILDirection.h" />
-    <ClInclude Include="ILDist.h" />
     <ClInclude Include="ILEllipsoid.h" />
     <ClInclude Include="ILFlat.h" />
     <ClInclude Include="ILLine.h" />
-    <ClInclude Include="ILPlacement.h" />
     <ClInclude Include="ILRaytracing.h" />
     <ClInclude Include="ILRotation.h" />
     <ClInclude Include="ILSegment.h" />
@@ -92,8 +90,10 @@
     <ClInclude Include="ILVector.h" />
     <ClInclude Include="ILMath.h" />
     <ClInclude Include="ILTypeInclude.h" />
+    <ClInclude Include="ILVector2.h" />
     <ClInclude Include="ILVEllipsoid.h" />
     <ClInclude Include="ILVSurface.h" />
+    <ClInclude Include="ILZBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ILAngle.cpp" />
@@ -102,12 +102,10 @@
     <ClCompile Include="ILCamera.cpp" />
     <ClCompile Include="ILColor.cpp" />
     <ClCompile Include="ILDirection.cpp" />
-    <ClCompile Include="ILDist.cpp" />
     <ClCompile Include="ILEllipsoid.cpp" />
     <ClCompile Include="ILFlat.cpp" />
     <ClCompile Include="ILLine.cpp" />
     <ClCompile Include="ILMath.cpp" />
-    <ClCompile Include="ILPlacement.cpp" />
     <ClCompile Include="ILRaytracing.cpp" />
     <ClCompile Include="ILRotation.cpp" />
     <ClCompile Include="ILSegment.cpp" />
@@ -115,8 +113,10 @@
     <ClCompile Include="ILSurface.cpp" />
     <ClCompile Include="ILVBall.cpp" />
     <ClCompile Include="ILVector.cpp" />
+    <ClCompile Include="ILVector2.cpp" />
     <ClCompile Include="ILVEllipsoid.cpp" />
     <ClCompile Include="ILVSurface.cpp" />
+    <ClCompile Include="ILZBuffer.cpp" />
     <ClCompile Include="IrisLaevigataEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
