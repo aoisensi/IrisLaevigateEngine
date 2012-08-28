@@ -5,10 +5,12 @@
 #include <tchar.h>
 #include <time.h>
 #include "IrisLaevigataEngine.h"
+#include "bitmap.h"
 
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 BOOL SetClientSize(HWND hWnd, int width, int height);
 void Show(LPVOID LPhDC);
+
 
 const int AA = 1;
 const int bmpx = 640;
@@ -79,28 +81,84 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )  
 {
-	static HDC hDC = GetDC(hWnd);
-	static HDC hCompatDC;
-	static HBITMAP hBitmap;
-	static HBITMAP hPrevBitmap; 
-	DWORD dwID;
-	static HANDLE ShowThread;
+	HDC hDC;
+	PAINTSTRUCT ps;
+
+	static HBITMAP hbmpBMP, hbmpOld;
+	static HDC hdcBMP;
+
+	static BITMAPINFO biBMP;
+
+	static LPDWORD lpdwPixel;
+
 	switch( msg )
 	{
-	case WM_DESTROY:
-		PostQuitMessage( 0 );  
-		return 0;
-	case WM_TIMER:
-		if(ShowThread != NULL)
-		{
-			ResumeThread(ShowThread);
-		}
-		return 0;
 	case WM_CREATE:
-		ShowThread = CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)Show,(LPVOID)hDC,CREATE_SUSPENDED,&dwID);
-		SetTimer(hWnd, 1, 1, NULL);
-		starttime = clock();
-		return 0;
+		{
+			SetTimer(hWnd, 1, 30, NULL);
+			return 0;
+		}
+
+	case WM_TIMER:
+		{
+			ZeroMemory(&biBMP, sizeof(biBMP));
+
+			biBMP.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+			biBMP.bmiHeader.biBitCount = 32;
+			biBMP.bmiHeader.biPlanes = 1;
+			biBMP.bmiHeader.biWidth = bmpx;
+			biBMP.bmiHeader.biHeight = bmpy;
+
+			hbmpBMP = CreateDIBSection(NULL, &biBMP, DIB_RGB_COLORS, (void **)(&lpdwPixel), NULL, 0);
+
+			hDC = GetDC(hWnd);
+
+			hdcBMP = CreateCompatibleDC(hDC);
+
+			ReleaseDC(hWnd, hDC);
+
+			hbmpOld = (HBITMAP)SelectObject(hdcBMP, hbmpBMP);
+			
+			for (int i = 0;i < bmpx;i++)
+			{
+				for (int j = 0;j < bmpy;j++)
+				{
+
+					ILCOLOR bit = picture.PGet(i,j);
+					lpdwPixel[(i) + (bmpy - j - 1) * bmpx] = bit.b * 0x00000001 + bit.g * 0x00000100 + bit.r * 0x00010000;
+
+				}
+			}
+			
+
+			InvalidateRect(hWnd, NULL, FALSE);
+
+			return 0;
+		}
+	case WM_PAINT:
+		{
+			hDC = BeginPaint(hWnd,&ps);
+
+			/* DIBSectionを表示 */
+			BitBlt(hDC, 0, 0, bmpx, bmpy, hdcBMP, 0, 0, SRCCOPY);
+
+			EndPaint(hWnd, &ps);
+
+			return 0;
+		}
+	case WM_DESTROY:
+		{
+			PostQuitMessage( 0 );  
+			/* DIBSectionをメモリデバイスコンテキストの選択から外す */
+			SelectObject(hdcBMP, hbmpOld);
+
+			/* DIBSectionを削除 */
+			DeleteObject(hbmpBMP);
+
+			/* メモリデバイスコンテキストを削除 */
+			DeleteDC(hdcBMP);
+			return 0;
+		}
 	}
 	return( DefWindowProc( hWnd, msg, wParam, lParam) );  
 }
@@ -116,42 +174,3 @@ BOOL SetClientSize(HWND hWnd, int width, int height)
 
 	return ::SetWindowPos(hWnd, NULL, 0, 0, new_width, new_height, SWP_NOMOVE | SWP_NOZORDER);
 }
-
-void Show(LPVOID LPhDC)
-{
-	HDC hDC = (HDC)LPhDC;
-	HDC hCDC;
-	HBITMAP hCBitmap,hOldCBitmap;
-	HPEN hPen;
-	HBRUSH hBackGround;
-	
-	hCDC = CreateCompatibleDC(hDC);
-	hCBitmap = CreateCompatibleBitmap(hDC,bmpx,bmpy);	//これ重要。
-	hPen = CreatePen(PS_SOLID,1,RGB(0,0,0));
-	hBackGround = CreateSolidBrush(RGB(255,255,255));
-
-	hOldCBitmap = (HBITMAP)SelectObject(hCDC,hCBitmap);
-
-	for(int i=0;i<bmpx;++i)
-	{
-		for(int j=0;j<bmpy;++j)
-		{
-			ILCOLOR bit = picture.PGet(i,j);
-			SetPixelV(hCDC,i,j,RGB(bit.r,bit.g,bit.b));
-		}
-	}
-
-
-	//ウインドウへコピー
-	BitBlt(hDC,0,0,bmpx,bmpy,hCDC,0,0,SRCCOPY);
-
-	SelectObject(hCDC,hOldCBitmap);
-
-	DeleteObject(hBackGround);
-	DeleteObject(hPen);
-	DeleteObject(hCBitmap);
-	DeleteDC(hCDC);
-
-	return;
-}
-

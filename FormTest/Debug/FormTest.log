@@ -1,4 +1,4 @@
-﻿2012/08/27 23:50:22 にビルドを開始しました。
+﻿2012/08/28 13:49:32 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\FormTest\FormTest.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\FormTest.unsuccessfulbuild" を作成しています。
@@ -9,6 +9,7 @@
          すべての出力が最新のものです。
        Link:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\FormTest.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FormTest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\FormTest.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\FormTest.lib" /MACHINE:X86 Debug\FormTest.exe.embed.manifest.res
+         Debug\bitmap.obj
          Debug\form.obj
          "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib"
        Manifest:
@@ -24,4 +25,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:09.52
+経過時間 00:00:02.52

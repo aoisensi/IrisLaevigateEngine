@@ -74,12 +74,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="form.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj">
       <Project>{3bcfb288-ed28-44d7-b2f9-22caece04c8a}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bitmap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
