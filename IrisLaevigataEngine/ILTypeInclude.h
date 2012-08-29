@@ -9,9 +9,11 @@
 #include "ILLine.h"
 #include "ILRotation.h"
 #include "ILSegment.h"
+#include "ILSegment2.h"
 #include "ILSpace.h"
 #include "ILSurface.h"
 #include "ILVEllipsoid.h"
 #include "ILVSurface.h"
 #include "ILVector.h"
+#include "ILVector2.h"
 

@@ -26,3 +26,15 @@ double ILVECTOR2::Dot(const ILVECTOR2 &value)const
 {
 	return this->x * value.x + this->y * this->y;
 }
+ILVECTOR ILVECTOR2::Cross(const ILVECTOR2 &value)const
+{
+	return ILVECTOR(0, 0, this->x * value.y - this->y * value.x);
+}
+double ILVECTOR2::CrossDouble(const ILVECTOR2 &value)const
+{
+	return this->x * value.y - this->y * value.x;
+}
+double ILVECTOR2::Norm()const
+{
+	return IL::ILMath::Sqrt(this->x * this->x + this->y * this->y);
+}

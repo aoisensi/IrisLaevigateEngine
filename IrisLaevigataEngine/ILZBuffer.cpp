@@ -27,52 +27,54 @@ void IL::ILZBuffer::Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBI
 		maxx = (ax > bx)?((ax > cx)?ax : cx):((bx > cx)?bx : cx);
 		miny = (ay < by)?((ay < cy)?ay : cy):((by < cy)?by : cy);
 		maxy = (ay > by)?((ay > cy)?ay : cy):((by > cy)?by : cy);
+		if(maxx < 0 || maxy < 0 || minx > Bitmap.x || miny > Bitmap.y)
+		{
+			continue;
+		}
+		minx = (0 > minx)? 0:minx;
+		maxx = (Bitmap.x < maxx)? Bitmap.x : maxx;
+		miny = (0 > miny)? 0:miny;
+		maxy = (Bitmap.y < maxy)? Bitmap.y : maxy;
 		ILVECTOR2 a = ILVECTOR2(ax, ay);
 		ILVECTOR2 b = ILVECTOR2(bx, by);
 		ILVECTOR2 c = ILVECTOR2(cx, cy);
 		ILVECTOR2 ab = b - a;
 		ILVECTOR2 bc = c - b;
 		ILVECTOR2 ca = a - c;
-		for(int j=minx;j<maxx;++j)
+		for(int j=0;j<Bitmap.x;++j)
 		{
-			if(j<0 || j>=Bitmap.x)
+			for(int k=0;k<Bitmap.y;++k)
 			{
-				continue;
-			}
-			for(int k=miny;k<maxy;++k)
-			{
-				if(k<0 || k>=Bitmap.y)
+				ILVECTOR2 p = ILVECTOR2(j,k);
+				ILVECTOR2 ap = p - a;
+				ILVECTOR2 bp = p - b;
+				ILVECTOR2 cp = p - c;
+				double A = ab.CrossDouble(ap) * ILMath::RBIZTZ(ab.CrossDouble(-ca));
+				if(A<0.0F || A>1.0F)
 				{
 					continue;
 				}
-				ILVECTOR2 p = ILVECTOR2(j,k);
-				double A = (bc.Dot(-ab) / bc.Dot(p - b));
-				if(A < 1.0F && A > 0.0F)
+				double B = bc.CrossDouble(bp) * ILMath::RBIZTZ(bc.CrossDouble(-ab));
+				if(B<0.0F || B>1.0F)
 				{
-					break;
+					continue;
 				}
-				double B = (ca.Dot(-bc) / ca.Dot(p - c));
-				if(B < 1.0F && B > 0.0F)
+				double C = ca.CrossDouble(cp) * ILMath::RBIZTZ(ca.CrossDouble(-bc));
+				if(C<0.0F || C>1.0F)
 				{
-					break;
+					continue;
 				}
-				double C = (ab.Dot(-ca) / ab.Dot(p - a));
-				if(C < 1.0F && C > 0.0F)
+				double* buffer = &zbuffer[j][k];
+				if(*buffer > Camera.min)
 				{
-					break;
+					double R = ILMath::RBIZTZ(A*B*C);
+					double Z = A*R + B*R + C*R;
+					if(*buffer > Z)
+					{
+						*buffer = Z;
+						Bitmap.PSet(j,k,VSurface.color);
+					}
 				}
-				double All = 1/(A*B*C);
-				double Z = A*All*az + B*All*bz + C*All*cz;
-				if(Z < Camera.min)
-				{
-					break;
-				}
-				if(zbuffer[j][k] < Z)
-				{
-					break;
-				}
-				zbuffer[j][k] = Z;
-				Bitmap.PSet(j,k,VSurface.color);
 			}
 		}
 	}
@@ -95,8 +97,8 @@ void IL::ILZBuffer::Projection(const ILVECTOR &Vector, const ILCAMERA &Camera, c
 	Rotate2D(Result.x, Result.z, Camera.rotation.y);
 	Rotate2D(Result.z, Result.y, Camera.rotation.x);
 	Rotate2D(Result.x, Result.y, Camera.rotation.z);
-	X = (int)(Result.x / Result.z / IL::ILMath::Tan(Camera.fovx) * Width * 0.5 + Width * 0.5);
-	Y = (int)(Result.y / Result.z / IL::ILMath::Tan(Camera.fovy) * Height * 0.5 + Height * 0.5);
+	X = (int)(Result.x * IL::ILMath::RBIZTZ(Result.z) * IL::ILMath::RBIZTZ(IL::ILMath::Tan(Camera.fovx)) * Width * 0.5 + Width * 0.5);
+	Y = (int)(Result.y * IL::ILMath::RBIZTZ(Result.z) * IL::ILMath::RBIZTZ(IL::ILMath::Tan(Camera.fovy)) * Height * 0.5 + Height * 0.5);
 	Z = Result.z;
 	return;
 }
@@ -109,3 +111,9 @@ void IL::ILZBuffer::Rotate2D(double &X, double &Y, const ILANGLE &Angle)
 	Y = bx * IL::ILMath::Sin(Angle) + by * IL::ILMath::Cos(Angle);
 	return;
 }
+
+double IL::ILZBuffer::DistPointVector(const ILVECTOR2 &Line, const ILVECTOR2 &Point)
+{
+	return Line.CrossDouble(Point) * IL::ILMath::RBIZTZ(Line.Norm());
+}
+

@@ -15,18 +15,20 @@ void Show(LPVOID LPhDC);
 const int AA = 1;
 const int bmpx = 640;
 const int bmpy = 480;
+static double camdist = 500;
 ILBITMAP bmp = ILBITMAP(bmpx*AA,bmpy*AA);
 ILBITMAP picture = ILBITMAP(bmpx,bmpy);
-IL::ILZBuffer Render;
+IL::ILRaytracing Render;
 ILSPACE MainSpace(16,0,16);
 ILCAMERA Camera = ILCAMERA(1,1000,ILROTATION(0,0,0),ILVECTOR(0,0,-800),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255));
 int starttime;
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 {
-	MainSpace.AddBall(ILVBALL(ILBALL(ILVECTOR(100,10,20),300),ILCOLOR(255,0,0)));
-	MainSpace.AddBall(ILVBALL(ILBALL(ILVECTOR(-100,20,-20),300),ILCOLOR(0,255,0)));
-	MainSpace.AddSurface(ILVSURFACE(ILSURFACE(0,-20,-1000,1000,-20,0,-1000,-20,0),ILCOLOR(128,128,128)));
+	//MainSpace.AddBall(ILVBALL(ILBALL(ILVECTOR(100,10,20),300),ILCOLOR(255,0,0)));
+	//MainSpace.AddBall(ILVBALL(ILBALL(ILVECTOR(-100,20,-20),300),ILCOLOR(0,255,0)));
+	MainSpace.AddSurface(ILVSURFACE(ILSURFACE(10,0,-50,-100,0,-50,10,100,50),ILCOLOR(255,0,0)));
+	MainSpace.AddSurface(ILVSURFACE(ILSURFACE(100,0,50,-10,0,50,-10,100,-50),ILCOLOR(0,255,0)));
 	Render.Rendering(MainSpace,Camera,bmp);
 	bmp.Reduction(AA,picture);
 	bmp.dispose();
@@ -118,7 +120,9 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 			ReleaseDC(hWnd, hDC);
 
 			hbmpOld = (HBITMAP)SelectObject(hdcBMP, hbmpBMP);
+			DeleteObject(hbmpOld);
 			
+
 			for (int i = 0;i < bmpx;i++)
 			{
 				for (int j = 0;j < bmpy;j++)
@@ -143,6 +147,9 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 			BitBlt(hDC, 0, 0, bmpx, bmpy, hdcBMP, 0, 0, SRCCOPY);
 
 			EndPaint(hWnd, &ps);
+
+			DeleteDC(hdcBMP);
+			DeleteObject(hbmpBMP);
 
 			return 0;
 		}

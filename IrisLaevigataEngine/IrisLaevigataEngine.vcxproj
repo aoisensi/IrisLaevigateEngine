@@ -84,6 +84,7 @@
     <ClInclude Include="ILRaytracing.h" />
     <ClInclude Include="ILRotation.h" />
     <ClInclude Include="ILSegment.h" />
+    <ClInclude Include="ILSegment2.h" />
     <ClInclude Include="ILSpace.h" />
     <ClInclude Include="ILSurface.h" />
     <ClInclude Include="ILVBall.h" />
@@ -109,6 +110,7 @@
     <ClCompile Include="ILRaytracing.cpp" />
     <ClCompile Include="ILRotation.cpp" />
     <ClCompile Include="ILSegment.cpp" />
+    <ClCompile Include="ILSegment2.cpp" />
     <ClCompile Include="ILSpace.cpp" />
     <ClCompile Include="ILSurface.cpp" />
     <ClCompile Include="ILVBall.cpp" />

@@ -70,6 +70,9 @@
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILZBuffer.h" />
+    <ClInclude Include="ILSegment2.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -130,5 +133,8 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILZBuffer.cpp" />
+    <ClCompile Include="ILSegment2.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

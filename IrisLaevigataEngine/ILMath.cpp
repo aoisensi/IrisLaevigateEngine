@@ -47,4 +47,9 @@ namespace IL
 	{
 		return o < 0 ? -o : o;
 	}
+
+	double ILMath::RBIZTZ(const double &o)//ReciprocalButIfZeroThenZero
+	{
+		return (o == 0.0F)?0.0F:1/o;
+	}
 }

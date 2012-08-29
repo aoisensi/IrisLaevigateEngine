@@ -26,6 +26,8 @@ namespace IL
 		static double Sqrt(const double &o);
 
 		static double Abs(const double &o);
+
+		static double RBIZTZ(const double &o);
 	};
 }
 
