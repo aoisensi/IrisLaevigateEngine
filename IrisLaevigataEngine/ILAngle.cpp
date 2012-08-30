@@ -7,7 +7,7 @@ ILANGLE::ILANGLE()
 }
 ILANGLE::ILANGLE(const double &Angle)
 {
-	angle = Angle;
+	angle = fmod(Angle, 180);
 }
 ILANGLE ILANGLE::operator+()
 {
@@ -16,6 +16,14 @@ ILANGLE ILANGLE::operator+()
 ILANGLE ILANGLE::operator-()
 {
 	return ILANGLE(-angle);
+}
+void ILANGLE::operator+=(const ILANGLE &value)
+{
+	this->angle = fmod(this->angle + value.angle ,180);
+}
+void ILANGLE::operator-=(const ILANGLE &value)
+{
+	this->angle = fmod(this->angle - value.angle ,180);
 }
 ILANGLE ILANGLE::operator+(const ILANGLE &value)
 {

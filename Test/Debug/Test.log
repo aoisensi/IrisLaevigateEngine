@@ -1,4 +1,4 @@
-﻿2012/08/26 20:08:53 にビルドを開始しました。
+﻿2012/08/30 3:12:41 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test\Test.vcxproj" (rebuild ターゲット)。
      1>_PrepareForClean:
          ファイル "Debug\Test.lastbuildstate" を削除しています。
@@ -15,4 +15,4 @@
 
 ビルドに失敗しました。
 
-経過時間 00:00:02.11
+経過時間 00:00:05.02

@@ -11,6 +11,7 @@ namespace IL
 	public:
 		double **zbuffer;
 		int x;
+		void CreateBuffer(const int &X, const int &Y);
 		void Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBITMAP &Bitmap);
 		void dispouse(void);
 		void Projection(const ILVECTOR &Vector, const ILCAMERA &Camera, const int &Width, const int &Height, int &X, int &Y, double &Z);

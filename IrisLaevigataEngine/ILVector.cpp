@@ -61,6 +61,11 @@ ILVECTOR ILVECTOR::operator-(const ILVECTOR& right)const
 	return ILVECTOR(x-right.x, y-right.y, z-right.z);
 }
 
+ILVECTOR ILVECTOR::operator-()const
+{
+	return ILVECTOR(-this->x,-this->y,-this->z);
+}
+
 ILVECTOR ILVECTOR::operator*(const double& right)const
 {
 	return ILVECTOR(x*right, y*right, z*right);

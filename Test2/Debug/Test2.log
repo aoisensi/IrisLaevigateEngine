@@ -1,26 +1,17 @@
-﻿2012/08/26 20:33:34 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (build ターゲット)。
-     1>InitializeBuildStatus:
+﻿2012/08/30 3:12:43 にビルドを開始しました。
+     1>ノード 4 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (rebuild ターゲット)。
+     1>_PrepareForClean:
+         ファイル "Debug\Test2.lastbuildstate" を削除しています。
+       InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\Test2.unsuccessfulbuild" を作成しています。
        GenerateTargetFrameworkMonikerAttribute:
        すべての出力ファイルが入力ファイルに対して最新なので、ターゲット "GenerateTargetFrameworkMonikerAttribute" を省略します。
        ClCompile:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine" /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /analyze- /errorReport:prompt main.cpp /clr:nostdlib 
          main.cpp
-         すべての出力が最新のものです。
-       Link:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\Test2.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\main.obj
-         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
-         "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib"
-     1>IrisLaevigataEngine.lib(ILVector.obj) : warning LNK4075: /EDITANDCONTINUE は /INCREMENTAL:NO の指定によって無視されます。
-         Test2.vcxproj -> C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe
-       Manifest:
-         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\Test2.exe;#1" /manifest Debug\Test2.exe.intermediate.manifest
-       FinalizeBuildStatus:
-         ファイル "Debug\Test2.unsuccessfulbuild" を削除しています。
-         "Debug\Test2.lastbuildstate" のタッチ タスクを実行しています。
-     1>プロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (build ターゲット) のビルドが完了しました。
+     1>main.cpp(21): error C2664: 'IL::ILRaytracing::ChkBall' : 3 番目の引数を 'ILVECTOR' から 'double &' に変換できません。(新しい機能 ; ヘルプを参照)
+     1>プロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Test2\Test2.vcxproj" (rebuild ターゲット) のビルドが終了しました -- 失敗。
 
-ビルドに成功しました。
+ビルドに失敗しました。
 
-経過時間 00:00:01.25
+経過時間 00:00:05.28

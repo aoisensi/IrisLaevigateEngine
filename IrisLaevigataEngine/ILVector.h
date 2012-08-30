@@ -22,6 +22,7 @@ public:
 	bool Equal(const ILVECTOR &obj, const double &Error)const;
 	ILVECTOR operator+(const ILVECTOR& right)const;
 	ILVECTOR operator-(const ILVECTOR& right)const;
+	ILVECTOR operator-(void)const;
 	ILVECTOR operator*(const double& right)const;
 	ILVECTOR operator/(const double& right)const;
 	double Dot(const ILVECTOR &value)const;

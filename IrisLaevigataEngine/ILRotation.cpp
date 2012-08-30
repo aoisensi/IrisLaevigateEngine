@@ -18,3 +18,7 @@ ILROTATION::ILROTATION(const double &X, const double &Y, const double &Z)
 	y = ILANGLE(Y);
 	z = ILANGLE(Z);
 }
+ILDIRECTION ILROTATION::Direction()const
+{
+	return ILDIRECTION(this->y,this->x);
+}

@@ -5,34 +5,28 @@
 #include <tchar.h>
 #include <time.h>
 #include "IrisLaevigataEngine.h"
-#include "bitmap.h"
+
+using namespace IL;
 
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 BOOL SetClientSize(HWND hWnd, int width, int height);
 void Show(LPVOID LPhDC);
-
+void Rendering(LPVOID hWnd);
 
 const int AA = 1;
-const int bmpx = 640;
-const int bmpy = 480;
+const int bmpx = 320;
+const int bmpy = 240;
+const double rolspd = 1; 
+
+static ILZBuffer render;
 static double camdist = 500;
-ILBITMAP bmp = ILBITMAP(bmpx*AA,bmpy*AA);
-ILBITMAP picture = ILBITMAP(bmpx,bmpy);
-IL::ILRaytracing Render;
-ILSPACE MainSpace(16,0,16);
-ILCAMERA Camera = ILCAMERA(1,1000,ILROTATION(0,0,0),ILVECTOR(0,0,-800),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255));
-int starttime;
+static ILROTATION camdir = ILROTATION();
+static ILBITMAP Bitmap = ILBITMAP(bmpx, bmpy);
+static ILSPACE Space = ILSPACE(256, 0, 0);
+static int keydata = 0;
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 {
-	//MainSpace.AddBall(ILVBALL(ILBALL(ILVECTOR(100,10,20),300),ILCOLOR(255,0,0)));
-	//MainSpace.AddBall(ILVBALL(ILBALL(ILVECTOR(-100,20,-20),300),ILCOLOR(0,255,0)));
-	MainSpace.AddSurface(ILVSURFACE(ILSURFACE(10,0,-50,-100,0,-50,10,100,50),ILCOLOR(255,0,0)));
-	MainSpace.AddSurface(ILVSURFACE(ILSURFACE(100,0,50,-10,0,50,-10,100,-50),ILCOLOR(0,255,0)));
-	Render.Rendering(MainSpace,Camera,bmp);
-	bmp.Reduction(AA,picture);
-	bmp.dispose();
-	MainSpace.dispose();
 
 	WNDCLASSEX wc;
 		wc.cbSize = sizeof(WNDCLASSEX);
@@ -76,7 +70,6 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 			DispatchMessage(&msg);
 		}
 	}
-	picture.dispose();
 	UnregisterClass(_T("ilformtest"), hInst);
 	return 0;
 }
@@ -93,49 +86,64 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 
 	static LPDWORD lpdwPixel;
 
+	DWORD dwParam;
+
 	switch( msg )
 	{
 	case WM_CREATE:
 		{
+			render.CreateBuffer(bmpx, bmpy);
+			Space.AddSurface(ILVSURFACE(ILSURFACE(10,0,-50,-100,0,-50,10,100,50),ILCOLOR(255,0,0)));
+			Space.AddSurface(ILVSURFACE(ILSURFACE(100,0,50,-10,0,50,-10,100,-50),ILCOLOR(0,255,0)));
 			SetTimer(hWnd, 1, 30, NULL);
+			SetTimer(hWnd, 2, 100, NULL);
 			return 0;
 		}
 
 	case WM_TIMER:
 		{
-			ZeroMemory(&biBMP, sizeof(biBMP));
-
-			biBMP.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-			biBMP.bmiHeader.biBitCount = 32;
-			biBMP.bmiHeader.biPlanes = 1;
-			biBMP.bmiHeader.biWidth = bmpx;
-			biBMP.bmiHeader.biHeight = bmpy;
-
-			hbmpBMP = CreateDIBSection(NULL, &biBMP, DIB_RGB_COLORS, (void **)(&lpdwPixel), NULL, 0);
-
-			hDC = GetDC(hWnd);
-
-			hdcBMP = CreateCompatibleDC(hDC);
-
-			ReleaseDC(hWnd, hDC);
-
-			hbmpOld = (HBITMAP)SelectObject(hdcBMP, hbmpBMP);
-			DeleteObject(hbmpOld);
-			
-
-			for (int i = 0;i < bmpx;i++)
+			switch(wParam)
 			{
-				for (int j = 0;j < bmpy;j++)
+			case 1:
 				{
+					ZeroMemory(&biBMP, sizeof(biBMP));
 
-					ILCOLOR bit = picture.PGet(i,j);
-					lpdwPixel[(i) + (bmpy - j - 1) * bmpx] = bit.b * 0x00000001 + bit.g * 0x00000100 + bit.r * 0x00010000;
+					biBMP.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+					biBMP.bmiHeader.biBitCount = 32;
+					biBMP.bmiHeader.biPlanes = 1;
+					biBMP.bmiHeader.biWidth = bmpx;
+					biBMP.bmiHeader.biHeight = bmpy;
 
+					hbmpBMP = CreateDIBSection(NULL, &biBMP, DIB_RGB_COLORS, (void **)(&lpdwPixel), NULL, 0);
+
+					hDC = GetDC(hWnd);
+
+					hdcBMP = CreateCompatibleDC(hDC);
+
+					ReleaseDC(hWnd, hDC);
+
+					hbmpOld = (HBITMAP)SelectObject(hdcBMP, hbmpBMP);
+					DeleteObject(hbmpOld);
+
+
+					for (int i = 0;i < bmpx;i++)
+					{
+						for (int j = 0;j < bmpy;j++)
+						{
+							ILCOLOR bit = Bitmap.PGet(i,j);
+							lpdwPixel[(i) + (bmpy - j - 1) * bmpx] = bit.b * 0x00000001 + bit.g * 0x00000100 + bit.r * 0x00010000;
+						}
+					}
+					InvalidateRect(hWnd, NULL, FALSE);
+				}
+			case 2:
+				{
+					if(WAIT_TIMEOUT != WaitForSingleObject(hWnd, 0))
+					{
+						CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Rendering, hWnd, 0, &dwParam);
+					}
 				}
 			}
-			
-
-			InvalidateRect(hWnd, NULL, FALSE);
 
 			return 0;
 		}
@@ -155,6 +163,8 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		}
 	case WM_DESTROY:
 		{
+			KillTimer(hWnd, 1);
+			KillTimer(hWnd, 2);
 			PostQuitMessage( 0 );  
 			/* DIBSectionをメモリデバイスコンテキストの選択から外す */
 			SelectObject(hdcBMP, hbmpOld);
@@ -164,6 +174,9 @@ LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 
 			/* メモリデバイスコンテキストを削除 */
 			DeleteDC(hdcBMP);
+			Bitmap.dispose();
+			Space.dispose();
+			render.dispouse();
 			return 0;
 		}
 	}
@@ -180,4 +193,30 @@ BOOL SetClientSize(HWND hWnd, int width, int height)
 	int new_height = (rw.bottom - rw.top) - (rc.bottom - rc.top) + height;
 
 	return ::SetWindowPos(hWnd, NULL, 0, 0, new_width, new_height, SWP_NOMOVE | SWP_NOZORDER);
+}
+
+void Rendering(LPVOID hWnd)
+{
+	if(GetAsyncKeyState(VK_LEFT))
+	{
+		camdir.y = ILANGLE(camdir.y.angle + rolspd);
+	}
+	if(GetAsyncKeyState(VK_UP))
+	{
+		camdir.x = ILANGLE(camdir.x.angle + rolspd);
+	}
+	if(GetAsyncKeyState(VK_RIGHT))
+	{
+		camdir.y = ILANGLE(camdir.y.angle - rolspd);
+	}
+	if(GetAsyncKeyState(VK_DOWN))
+	{
+		camdir.x = ILANGLE(camdir.x.angle - rolspd);
+	}
+	TCHAR str[256];
+	_stprintf(str,_T("x:%d y:%d"),camdir.y.angle,camdir.x.angle);
+	SetWindowText((HWND)hWnd,str);
+	render.Rendering(Space, ILCAMERA(10,10000,camdir,-ILVECTOR(camdir.Direction(),camdist),ILANGLE(45),ILANGLE(45/4*3),ILCOLOR(0,0,255)),Bitmap);
+	ExitThread(TRUE);
+	return;
 }

@@ -1,12 +1,19 @@
 #include "ILZBuffer.h"
 
+void IL::ILZBuffer::CreateBuffer(const int &X, const int &Y)
+{
+	this->x = X;
+	zbuffer = new double*[X];
+	for(int i=0;i<X;++i)
+	{
+		zbuffer[i] = new double[Y];
+	}
+}
+
 void IL::ILZBuffer::Rendering(const ILSPACE &Space, const ILCAMERA &Camera, ILBITMAP &Bitmap)
 {
-	this->x = Bitmap.x;
-	zbuffer = new double*[Bitmap.x];
 	for(int i=0;i<Bitmap.x;++i)
 	{
-		zbuffer[i] = new double[Bitmap.y];
 		for(int j=0;j<Bitmap.y;++j)
 		{
 			zbuffer[i][j] = Camera.max;
