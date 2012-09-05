@@ -7,7 +7,7 @@ ILANGLE::ILANGLE()
 }
 ILANGLE::ILANGLE(const double &Angle)
 {
-	angle = fmod(Angle, 180);
+	this->angle = Exceeds(Angle);
 }
 ILANGLE ILANGLE::operator+()
 {
@@ -41,3 +41,8 @@ ILANGLE ILANGLE::operator/(const double &value)
 {
 	return ILANGLE(angle / value);
 }
+double ILANGLE::Exceeds(const double &value)
+{
+	return value - (((int)(value * M_1_PI))*M_PI);
+}
+

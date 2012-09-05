@@ -2,7 +2,9 @@
 #ifndef H_ILANGLE
 #define H_ILANGLE
 
-#include "math.h"
+#include "ILMath.h"
+
+class ILMath;
 
 class ILANGLE
 {
@@ -18,6 +20,7 @@ public:
 	void operator-=(const ILANGLE &value);
 	ILANGLE operator*(const double &value);
 	ILANGLE operator/(const double &value);
+	double Exceeds(const double &value);
 };
 
 #endif

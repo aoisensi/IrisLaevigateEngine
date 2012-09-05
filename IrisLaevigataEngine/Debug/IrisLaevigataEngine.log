@@ -1,13 +1,33 @@
-﻿2012/08/30 13:37:51 にビルドを開始しました。
+﻿2012/09/01 19:21:17 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\IrisLaevigataEngine.unsuccessfulbuild" を作成しています。
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILZBuffer.cpp IrisLaevigataEngine.h
-         ILZBuffer.cpp
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILAngle.cpp ILBall.cpp ILCamera.cpp ILDirection.cpp ILEllipsoid.cpp ILFlat.cpp ILLine.cpp ILMath.cpp ILRaytracing.cpp ILRotation.cpp ILSegment.cpp ILSegment2.cpp ILSpace.cpp ILSurface.cpp ILVBall.cpp ILVEllipsoid.cpp ILVSurface.cpp ILVector.cpp ILVector2.cpp ILZBuffer.cpp IrisLaevigataEngine.h
+         ILAngle.cpp
          コードを生成中...
-         スキップ中... (関連する変更は検出されませんでした)
+         コンパイル中...
          IrisLaevigataEngine.h
+         ILZBuffer.cpp
+         ILVector2.cpp
+         ILVector.cpp
+         ILVSurface.cpp
+         ILVEllipsoid.cpp
+         ILVBall.cpp
+         ILSurface.cpp
+         ILSpace.cpp
+         ILSegment2.cpp
+         ILSegment.cpp
+         ILRotation.cpp
+         ILRaytracing.cpp
+         ILMath.cpp
+         ILLine.cpp
+         ILFlat.cpp
+         ILEllipsoid.cpp
+         ILDirection.cpp
+         ILCamera.cpp
+         ILBall.cpp
+         コードを生成中...
        Lib:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib" /NOLOGO Debug\ILAngle.obj
          Debug\ILBall.obj
@@ -40,4 +60,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:01.07
+経過時間 00:00:02.52

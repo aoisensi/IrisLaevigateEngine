@@ -76,111 +76,74 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPInst, LPSTR lpCmd, int nCmd)
 
 LRESULT WINAPI MsgProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )  
 {
-	HDC hDC;
-	PAINTSTRUCT ps;
+	static BITMAPINFO   bmpinfo;    // ビットマップ情報
+	static LPDWORD      lpPixel;    // ピクセル配列
+	static HBITMAP      hBitmap;    // ビットマップ
+	static HDC          hMemDC;     // オフスクリーン
 
-	static HBITMAP hbmpBMP, hbmpOld;
-	static HDC hdcBMP;
-
-	static BITMAPINFO biBMP;
-
-	static LPDWORD lpdwPixel;
-
-	DWORD dwParam;
-
-	switch( msg )
+	switch(msg)
 	{
 	case WM_CREATE:
 		{
-			render.CreateBuffer(bmpx, bmpy);
-			Space.AddSurface(ILVSURFACE(ILSURFACE(10,0,-50,-100,0,-50,10,100,50),ILCOLOR(255,0,0)));
-			Space.AddSurface(ILVSURFACE(ILSURFACE(100,0,50,-10,0,50,-10,100,-50),ILCOLOR(0,255,0)));
+			HDC hDC;
+			bmpinfo.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+			bmpinfo.bmiHeader.biWidth = +bmpx;
+			bmpinfo.bmiHeader.biHeight = -bmpy;
+			bmpinfo.bmiHeader.biPlanes = 1;
+			bmpinfo.bmiHeader.biBitCount = 32;
+			bmpinfo.bmiHeader.biCompression = BI_RGB;
+
+			hDC = GetDC(hWnd);
+			hMemDC = CreateCompatibleDC(hDC);
+			hBitmap = CreateDIBSection(NULL, &bmpinfo, DIB_RGB_COLORS, (LPVOID*)&lpPixel, NULL, 0);
+			SelectObject(hMemDC, hBitmap);
+			ReleaseDC(hWnd,hDC);
+
 			SetTimer(hWnd, 1, 30, NULL);
-			SetTimer(hWnd, 2, 100, NULL);
 			return 0;
 		}
-
-	case WM_TIMER:
+	case  WM_CLOSE:
 		{
-			switch(wParam)
-			{
-			case 1:
-				{
-					ZeroMemory(&biBMP, sizeof(biBMP));
-
-					biBMP.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-					biBMP.bmiHeader.biBitCount = 32;
-					biBMP.bmiHeader.biPlanes = 1;
-					biBMP.bmiHeader.biWidth = bmpx;
-					biBMP.bmiHeader.biHeight = bmpy;
-
-					hbmpBMP = CreateDIBSection(NULL, &biBMP, DIB_RGB_COLORS, (void **)(&lpdwPixel), NULL, 0);
-
-					hDC = GetDC(hWnd);
-
-					hdcBMP = CreateCompatibleDC(hDC);
-
-					ReleaseDC(hWnd, hDC);
-
-					hbmpOld = (HBITMAP)SelectObject(hdcBMP, hbmpBMP);
-					DeleteObject(hbmpOld);
-
-
-					for (int i = 0;i < bmpx;i++)
-					{
-						for (int j = 0;j < bmpy;j++)
-						{
-							ILCOLOR bit = Bitmap.PGet(i,j);
-							lpdwPixel[(i) + (bmpy - j - 1) * bmpx] = bit.b * 0x00000001 + bit.g * 0x00000100 + bit.r * 0x00010000;
-						}
-					}
-					InvalidateRect(hWnd, NULL, FALSE);
-				}
-			case 2:
-				{
-					if(WAIT_TIMEOUT != WaitForSingleObject(hWnd, 0))
-					{
-						CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Rendering, hWnd, 0, &dwParam);
-					}
-				}
-			}
-
-			return 0;
-		}
-	case WM_PAINT:
-		{
-			hDC = BeginPaint(hWnd,&ps);
-
-			/* DIBSectionを表示 */
-			BitBlt(hDC, 0, 0, bmpx, bmpy, hdcBMP, 0, 0, SRCCOPY);
-
-			EndPaint(hWnd, &ps);
-
-			DeleteDC(hdcBMP);
-			DeleteObject(hbmpBMP);
-
+			DeleteDC(hMemDC);
+			DeleteObject(hBitmap);
+			DestroyWindow(hWnd);
 			return 0;
 		}
 	case WM_DESTROY:
 		{
-			KillTimer(hWnd, 1);
-			KillTimer(hWnd, 2);
-			PostQuitMessage( 0 );  
-			/* DIBSectionをメモリデバイスコンテキストの選択から外す */
-			SelectObject(hdcBMP, hbmpOld);
-
-			/* DIBSectionを削除 */
-			DeleteObject(hbmpBMP);
-
-			/* メモリデバイスコンテキストを削除 */
-			DeleteDC(hdcBMP);
-			Bitmap.dispose();
-			Space.dispose();
-			render.dispouse();
+			PostQuitMessage(0);
+			return 0;
+		}
+	case WM_PAINT:
+		{
+			PAINTSTRUCT ps;
+			HDC hDC;
+			hDC = BeginPaint(hWnd, &ps);
+			BitBlt(hDC, 0, 0, bmpx, bmpy, hMemDC, 0, 0, SRCCOPY);
+			EndPaint(hWnd, &ps);
+			return 0;
+		}
+	case WM_TIMER:
+		{
+			switch(wParam)
+			{
+			case (1):
+				{
+					for(int i=0;i<bmpx;++i)
+					{
+						for(int j=0;j<bmpy;++j)
+						{
+							ILCOLOR bit = Bitmap.PGet(i,j);
+							lpPixel[(i) + j * bmpx] = bit.b * 0x00000001 + bit.g * 0x00000100 + bit.r * 0x00010000;
+						}
+					}
+					InvalidateRect(hWnd, NULL, FALSE);
+				}
+			}
 			return 0;
 		}
 	}
-	return( DefWindowProc( hWnd, msg, wParam, lParam) );  
+	return 0;
 }
 
 BOOL SetClientSize(HWND hWnd, int width, int height)
