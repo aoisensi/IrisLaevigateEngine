@@ -16,6 +16,7 @@ public:
 	void PSet(const int &X, const int &Y, const ILCOLOR Color);
 	void dispose();
 	void Reduction(const int &n, ILBITMAP &output);
+	void Fill(const ILCOLOR &Color);
 };
 
 #endif

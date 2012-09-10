@@ -10,6 +10,18 @@
     <Filter Include="TypeCpp">
       <UniqueIdentifier>{ab03729c-fce4-4f39-b748-9b0b6a0acdc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TypeCpp\Toon">
+      <UniqueIdentifier>{a9bc9e63-172d-4657-8b66-05a7c8261796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TypeHedder\Toon">
+      <UniqueIdentifier>{41287a8c-45c6-41e6-a5b2-b701dbb0b016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TypeHedder\Buffer">
+      <UniqueIdentifier>{5c6b16bd-9a7d-439e-956a-4f8f264949f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TypeCpp\Buffer">
+      <UniqueIdentifier>{51fbecbe-e2de-4f4a-8db4-f2f19329024a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ILVector.h">
@@ -35,16 +47,12 @@
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILTypeInclude.h" />
-    <ClInclude Include="ILSpace.h">
-      <Filter>TypeHedder</Filter>
-    </ClInclude>
     <ClInclude Include="ILEllipsoid.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILColor.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
-    <ClInclude Include="ILRaytracing.h" />
     <ClInclude Include="ILBitmap.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
@@ -52,12 +60,6 @@
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILRotation.h">
-      <Filter>TypeHedder</Filter>
-    </ClInclude>
-    <ClInclude Include="ILVSurface.h">
-      <Filter>TypeHedder</Filter>
-    </ClInclude>
-    <ClInclude Include="ILVEllipsoid.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
     <ClInclude Include="ILBall.h">
@@ -69,10 +71,22 @@
     <ClInclude Include="ILVector2.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
-    <ClInclude Include="ILZBuffer.h" />
     <ClInclude Include="ILSegment2.h">
       <Filter>TypeHedder</Filter>
     </ClInclude>
+    <ClInclude Include="ILVector4.h">
+      <Filter>TypeHedder</Filter>
+    </ClInclude>
+    <ClInclude Include="ILTSpace.h">
+      <Filter>TypeHedder\Toon</Filter>
+    </ClInclude>
+    <ClInclude Include="ILTSurface.h">
+      <Filter>TypeHedder\Toon</Filter>
+    </ClInclude>
+    <ClInclude Include="ILDoubleBuffer.h">
+      <Filter>TypeHedder\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ILToon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IrisLaevigataEngine.h" />
@@ -98,16 +112,12 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILMath.cpp" />
-    <ClCompile Include="ILSpace.cpp">
-      <Filter>TypeCpp</Filter>
-    </ClCompile>
     <ClCompile Include="ILEllipsoid.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILColor.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
-    <ClCompile Include="ILRaytracing.cpp" />
     <ClCompile Include="ILBitmap.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
@@ -115,12 +125,6 @@
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILRotation.cpp">
-      <Filter>TypeCpp</Filter>
-    </ClCompile>
-    <ClCompile Include="ILVSurface.cpp">
-      <Filter>TypeCpp</Filter>
-    </ClCompile>
-    <ClCompile Include="ILVEllipsoid.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
     <ClCompile Include="ILBall.cpp">
@@ -132,9 +136,21 @@
     <ClCompile Include="ILVector2.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
-    <ClCompile Include="ILZBuffer.cpp" />
     <ClCompile Include="ILSegment2.cpp">
       <Filter>TypeCpp</Filter>
     </ClCompile>
+    <ClCompile Include="ILVector4.cpp">
+      <Filter>TypeCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ILTSpace.cpp">
+      <Filter>TypeCpp\Toon</Filter>
+    </ClCompile>
+    <ClCompile Include="ILTSurface.cpp">
+      <Filter>TypeCpp\Toon</Filter>
+    </ClCompile>
+    <ClCompile Include="ILDoubleBuffer.cpp">
+      <Filter>TypeCpp\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ILToon.cpp" />
   </ItemGroup>
 </Project>

@@ -21,6 +21,7 @@ public:
 	ILANGLE operator*(const double &value);
 	ILANGLE operator/(const double &value);
 	double Exceeds(const double &value);
+	double Frequency(void);
 };
 
 #endif

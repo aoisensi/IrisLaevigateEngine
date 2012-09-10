@@ -72,6 +72,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ILDoubleBuffer.h" />
     <ClInclude Include="ILAngle.h" />
     <ClInclude Include="ILBall.h" />
     <ClInclude Include="ILBitmap.h" />
@@ -81,20 +82,19 @@
     <ClInclude Include="ILEllipsoid.h" />
     <ClInclude Include="ILFlat.h" />
     <ClInclude Include="ILLine.h" />
-    <ClInclude Include="ILRaytracing.h" />
     <ClInclude Include="ILRotation.h" />
     <ClInclude Include="ILSegment.h" />
     <ClInclude Include="ILSegment2.h" />
-    <ClInclude Include="ILSpace.h" />
     <ClInclude Include="ILSurface.h" />
+    <ClInclude Include="ILToon.h" />
+    <ClInclude Include="ILTSpace.h" />
+    <ClInclude Include="ILTSurface.h" />
     <ClInclude Include="ILVBall.h" />
     <ClInclude Include="ILVector.h" />
     <ClInclude Include="ILMath.h" />
     <ClInclude Include="ILTypeInclude.h" />
     <ClInclude Include="ILVector2.h" />
-    <ClInclude Include="ILVEllipsoid.h" />
-    <ClInclude Include="ILVSurface.h" />
-    <ClInclude Include="ILZBuffer.h" />
+    <ClInclude Include="ILVector4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ILAngle.cpp" />
@@ -103,22 +103,22 @@
     <ClCompile Include="ILCamera.cpp" />
     <ClCompile Include="ILColor.cpp" />
     <ClCompile Include="ILDirection.cpp" />
+    <ClCompile Include="ILDoubleBuffer.cpp" />
     <ClCompile Include="ILEllipsoid.cpp" />
     <ClCompile Include="ILFlat.cpp" />
     <ClCompile Include="ILLine.cpp" />
     <ClCompile Include="ILMath.cpp" />
-    <ClCompile Include="ILRaytracing.cpp" />
     <ClCompile Include="ILRotation.cpp" />
     <ClCompile Include="ILSegment.cpp" />
     <ClCompile Include="ILSegment2.cpp" />
-    <ClCompile Include="ILSpace.cpp" />
     <ClCompile Include="ILSurface.cpp" />
+    <ClCompile Include="ILToon.cpp" />
+    <ClCompile Include="ILTSpace.cpp" />
+    <ClCompile Include="ILTSurface.cpp" />
     <ClCompile Include="ILVBall.cpp" />
     <ClCompile Include="ILVector.cpp" />
     <ClCompile Include="ILVector2.cpp" />
-    <ClCompile Include="ILVEllipsoid.cpp" />
-    <ClCompile Include="ILVSurface.cpp" />
-    <ClCompile Include="ILZBuffer.cpp" />
+    <ClCompile Include="ILVector4.cpp" />
     <ClCompile Include="IrisLaevigataEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

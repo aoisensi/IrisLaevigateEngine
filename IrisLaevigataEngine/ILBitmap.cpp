@@ -61,3 +61,14 @@ void ILBITMAP::Reduction(const int &n, ILBITMAP &output)
 		}
 	}
 }
+
+void ILBITMAP::Fill(const ILCOLOR &Color)
+{
+	for(int i=0;i<this->x;++i)
+	{
+		for(int j=0;j<this->y;++j)
+		{
+			this->PSet(i,j,Color);
+		}
+	}
+}

@@ -43,6 +43,10 @@ ILANGLE ILANGLE::operator/(const double &value)
 }
 double ILANGLE::Exceeds(const double &value)
 {
-	return value - (((int)(value * M_1_PI))*M_PI);
+	return value - (((int)(value * M_1_PI))*M_PI*2);
+}
+double ILANGLE::Frequency()
+{
+	return this->angle * M_1_DEGREE;
 }
 

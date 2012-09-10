@@ -1,63 +1,17 @@
-﻿2012/09/01 19:21:17 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット)。
+﻿2012/09/10 18:16:13 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\IrisLaevigataEngine.unsuccessfulbuild" を作成しています。
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ILAngle.cpp ILBall.cpp ILCamera.cpp ILDirection.cpp ILEllipsoid.cpp ILFlat.cpp ILLine.cpp ILMath.cpp ILRaytracing.cpp ILRotation.cpp ILSegment.cpp ILSegment2.cpp ILSpace.cpp ILSurface.cpp ILVBall.cpp ILVEllipsoid.cpp ILVSurface.cpp ILVector.cpp ILVector2.cpp ILZBuffer.cpp IrisLaevigataEngine.h
-         ILAngle.cpp
-         コードを生成中...
-         コンパイル中...
-         IrisLaevigataEngine.h
-         ILZBuffer.cpp
-         ILVector2.cpp
-         ILVector.cpp
-         ILVSurface.cpp
-         ILVEllipsoid.cpp
-         ILVBall.cpp
-         ILSurface.cpp
-         ILSpace.cpp
-         ILSegment2.cpp
-         ILSegment.cpp
-         ILRotation.cpp
-         ILRaytracing.cpp
-         ILMath.cpp
-         ILLine.cpp
-         ILFlat.cpp
-         ILEllipsoid.cpp
-         ILDirection.cpp
-         ILCamera.cpp
-         ILBall.cpp
-         コードを生成中...
+         すべての出力が最新のものです。
        Lib:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib" /NOLOGO Debug\ILAngle.obj
-         Debug\ILBall.obj
-         Debug\ILBitmap.obj
-         Debug\ILCamera.obj
-         Debug\ILColor.obj
-         Debug\ILDirection.obj
-         Debug\ILEllipsoid.obj
-         Debug\ILFlat.obj
-         Debug\ILLine.obj
-         Debug\ILMath.obj
-         Debug\ILRaytracing.obj
-         Debug\ILRotation.obj
-         Debug\ILSegment.obj
-         Debug\ILSegment2.obj
-         Debug\ILSpace.obj
-         Debug\ILSurface.obj
-         Debug\ILVBall.obj
-         Debug\ILVector.obj
-         Debug\ILVector2.obj
-         Debug\ILVEllipsoid.obj
-         Debug\ILVSurface.obj
-         Debug\ILZBuffer.obj
-         Debug\IrisLaevigataEngine.obj
-         IrisLaevigataEngine.vcxproj -> C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib
+         すべての出力が最新のものです。
+         IrisLaevigataEngine.vcxproj -> C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\Debug\IrisLaevigataEngine.lib
        FinalizeBuildStatus:
          ファイル "Debug\IrisLaevigataEngine.unsuccessfulbuild" を削除しています。
          "Debug\IrisLaevigataEngine.lastbuildstate" のタッチ タスクを実行しています。
-     1>プロジェクト "C:\Users\aoisensi\Documents\Visual Studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット) のビルドが完了しました。
+     1>プロジェクト "C:\Users\aoisensi\documents\visual studio 2010\3DEngine\IrisLaevigataEngine\IrisLaevigataEngine\IrisLaevigataEngine.vcxproj" (build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:02.52
+経過時間 00:00:00.05

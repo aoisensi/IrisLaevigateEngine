@@ -10,10 +10,13 @@
 #include "ILRotation.h"
 #include "ILSegment.h"
 #include "ILSegment2.h"
-#include "ILSpace.h"
 #include "ILSurface.h"
-#include "ILVEllipsoid.h"
-#include "ILVSurface.h"
 #include "ILVector.h"
 #include "ILVector2.h"
+#include "ILVector4.h"
+
+#include "ILTSpace.h"
+#include "ILTSurface.h"
+
+#include "ILDoubleBuffer.h"
 

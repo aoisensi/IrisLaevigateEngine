@@ -15,8 +15,7 @@ public:
 	ILVECTOR vector;
 	ILANGLE fovx;
 	ILANGLE fovy;
-	ILCOLOR backgroundcolor;
-	ILCAMERA(const double &Min, const double &Max, const ILROTATION &Rotation, const ILVECTOR &Vector, const ILANGLE &FovX, const ILANGLE &FovY, const ILCOLOR &Color);
+	ILCAMERA(const double &Min, const double &Max, const ILROTATION &Rotation, const ILVECTOR &Vector, const ILANGLE &FovX, const ILANGLE &FovY);
 };
 
 #endif
